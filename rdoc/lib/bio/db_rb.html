@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>File: db.rb [BioRuby API documentation]</title>
+
+  <link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet" />
+
+  <script src="../../js/jquery.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../js/darkfish.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+
+<body class="file file-popup">
+  <div id="metadata">
+    <dl>
+      <dt class="modified-date">Last Modified</dt>
+      <dd class="modified-date">2010-10-22 11:48:50 +0900</dd>
+
+      
+      <dt class="requires">Requires</dt>
+      <dd class="requires">
+        <ul>
+        
+          <li>bio/sequence</li>
+        
+          <li>bio/reference</li>
+        
+          <li>bio/feature</li>
+        
+        </ul>
+      </dd>
+      
+
+      
+    </dl>
+  </div>
+
+  <div id="documentation">
+    
+    <div class="description">
+      <h2>Description</h2>
+      
+<h1>bio/db.rb - common API for database parsers</h1>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>Copyright</p></td>
+<td>
+<p>Copyright (C) 2001, 2002, 2005 Toshiaki Katayama &lt;k@bioruby.org&gt;</p>
+</td></tr><tr><td class="rdoc-term"><p>License</p></td>
+<td>
+<p>The Ruby License</p>
+</td></tr></table>
+
+<p>$Id: db.rb,v 0.38 2007/05/08 17:02:13 nakao Exp $</p>
+
+<h2>On-demand parsing and cache</h2>
+
+<p>The flatfile parsers (sub classes of the <a
+href="../../Bio/DB.html">Bio::DB</a>) split the original entry into a <a
+href="../../Hash.html">Hash</a> and store the hash in the @orig instance
+variable.  To parse in detail is delayed until the method is called which
+requires a further parsing of a content of the @orig hash.  Fully parsed
+data is cached in the another hash, @data, separately.</p>
+
+<h2>Guide lines for the developers to create an new database class</h2>
+
+<p>— Bio::DB.new(entry)</p>
+
+<p>The ‘new’ method should accept the entire entry in one <a
+href="../../String.html">String</a> and return the parsed database object.</p>
+
+<p>— <a href="../../Bio/DB.html#method-i-entry_id">Bio::DB#entry_id</a></p>
+
+<p>Database classes should implement the following methods if appropriate:</p>
+<ul><li>
+<p>entry_id</p>
+</li><li>
+<p>definition</p>
+</li></ul>
+
+<p>Every sub class should define the following constants if appropriate:</p>
+<ul><li>
+<p>DELIMITER (RS)</p>
+<ul><li>
+<p>entry separator of the flatfile of the database.</p>
+</li><li>
+<p>RS (= record separator) is an alias for the DELIMITER in short.</p>
+</li></ul>
+</li><li>
+<p>TAGSIZE</p>
+<ul><li>
+<p>length of the tag field in the FORTRAN-like format.</p>
+
+<pre>|&lt;- tag       -&gt;||&lt;- data                           ----&gt;|
+ENTRY_ID         A12345
+DEFINITION       Hoge gene of the Pokemonia pikachuae</pre>
+</li></ul>
+</li></ul>
+
+<h3>Template of the sub class</h3>
+
+<pre>module Bio
+class Hoge &lt; DB
+
+  DELIMITER = RS = &quot;\n//\n&quot;
+  TAGSIZE           = 12             # You can omit this line if not needed
+
+  def initialize(entry)
+  end
+
+  def entry_id
+  end
+
+end # class Hoge
+end # module Bio</pre>
+
+<h3>Recommended method names for sub classes</h3>
+
+<p>In general, the method name should be in the singular form when returns a
+<a href="../../Object.html">Object</a> (including the case when the <a
+href="../../Object.html">Object</a> is a <a
+href="../../String.html">String</a>), and should be the plural form when
+returns same Objects in Array.  It depends on the database classes that
+which form of the method name can be use.</p>
+
+<p>For example, GenBank has several REFERENCE fields in one entry, so define
+<a
+href="../../Bio/NCBIDB/Common.html#method-i-references">Bio::GenBank#references</a>
+and this method should return an Array of the Reference objects.  On the
+other hand, MEDLINE has one REFERENCE information per one entry, so define
+<a
+href="../../Bio/MEDLINE.html#method-i-reference">Bio::MEDLINE#reference</a>
+method and this should return a Reference object.</p>
+
+<p>The method names used in the sub classes should be taken from the following
+list if appropriate:</p>
+
+<p>— entry_id #=&gt; <a href="../../String.html">String</a></p>
+
+<p>The entry identifier.</p>
+
+<p>— definition #=&gt; <a href="../../String.html">String</a></p>
+
+<p>The description of the entry.</p>
+
+<p>— reference #=&gt; <a href="../../Bio/Reference.html">Bio::Reference</a> —
+references #=&gt; Array of <a
+href="../../Bio/Reference.html">Bio::Reference</a></p>
+
+<p>The reference field(s) of the entry.</p>
+
+<p>— dblink #=&gt; <a href="../../String.html">String</a> — dblinks #=&gt;
+Array of <a href="../../String.html">String</a></p>
+
+<p>The link(s) to the other database entry.</p>
+
+<p>— naseq #=&gt; <a href="../../Bio/Sequence/NA.html">Bio::Sequence::NA</a></p>
+
+<p>The DNA/RNA sequence of the entry.</p>
+
+<p>— nalen #=&gt; Integer</p>
+
+<p>The length of the DNA/RNA sequence of the entry.</p>
+
+<p>— aaseq #=&gt; <a href="../../Bio/Sequence/AA.html">Bio::Sequence::AA</a></p>
+
+<p>The amino acid sequence of the entry.</p>
+
+<p>— aalen #=&gt; Integer</p>
+
+<p>The length of the amino acid sequence of the entry.</p>
+
+<p>— seq #=&gt; <a href="../../Bio/Sequence/NA.html">Bio::Sequence::NA</a> or
+<a href="../../Bio/Sequence/AA.html">Bio::Sequence::AA</a></p>
+
+<p>Returns an appropriate sequence object.</p>
+
+<p>— position #=&gt; <a href="../../String.html">String</a></p>
+
+<p>The position of the sequence in the entry or in the genome (depends on the
+database).</p>
+
+<p>— locations #=&gt; <a href="../../Bio/Locations.html">Bio::Locations</a></p>
+
+<p>Returns <a
+href="../../Bio/Locations.html#method-c-new">Bio::Locations.new(position)</a>.</p>
+
+<p>— division #=&gt; <a href="../../String.html">String</a></p>
+
+<p>The sub division name of the database.</p>
+<ul><li>
+<p>Example:</p>
+<ul><li>
+<p>EST, VRL etc. for GenBank</p>
+</li><li>
+<p>PATTERN, RULE etc. for PROSITE</p>
+</li></ul>
+</li></ul>
+
+<p>— date #=&gt; <a href="../../String.html">String</a></p>
+
+<p>The date of the entry. Should we use Date (by ParseDate) instead of <a
+href="../../String.html">String</a>?</p>
+
+<p>— gene #=&gt; <a href="../../String.html">String</a> — genes #=&gt; Array
+of <a href="../../String.html">String</a></p>
+
+<p>The name(s) of the gene.</p>
+
+<p>— organism #=&gt; <a href="../../String.html">String</a></p>
+
+<p>The name of the organism.</p>
+
+    </div>
+    
+  </div>
+</body>
+</html>
+

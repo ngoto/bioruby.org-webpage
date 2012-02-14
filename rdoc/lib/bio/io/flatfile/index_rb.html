@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>File: index.rb [BioRuby API documentation]</title>
+
+  <link type="text/css" media="screen" href="../../../../rdoc.css" rel="stylesheet" />
+
+  <script src="../../../../js/jquery.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../../../js/thickbox-compressed.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../../../js/quicksearch.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../../../js/darkfish.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+
+<body class="file file-popup">
+  <div id="metadata">
+    <dl>
+      <dt class="modified-date">Last Modified</dt>
+      <dd class="modified-date">2010-10-22 11:48:50 +0900</dd>
+
+      
+      <dt class="requires">Requires</dt>
+      <dd class="requires">
+        <ul>
+        
+          <li>bio/io/flatfile/indexer</li>
+        
+          <li>tempfile</li>
+        
+        </ul>
+      </dd>
+      
+
+      
+    </dl>
+  </div>
+
+  <div id="documentation">
+    
+    <div class="description">
+      <h2>Description</h2>
+      
+<h1>bio/io/flatfile/index.rb - OBDA flatfile index </h1>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>Copyright</p></td>
+<td>
+<p>Copyright (C) 2002 GOTO Naohisa &lt;ng@bioruby.org&gt;</p>
+</td></tr><tr><td class="rdoc-term"><p>License</p></td>
+<td>
+<p>The Ruby License</p>
+</td></tr></table>
+
+<pre>$Id: index.rb,v 1.19 2007/04/05 23:35:41 trevor Exp $</pre>
+
+<h1>About <a href="../../../../Bio/FlatFileIndex.html">Bio::FlatFileIndex</a></h1>
+
+<p>Please refer documents of following classes. Classes/modules marked ‘#’ are
+internal use only.</p>
+
+<h2>Classes/modules in index.rb</h2>
+<ul><li>
+<p>class  <a href="../../../../Bio/FlatFileIndex.html">Bio::FlatFileIndex</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Results.html">Bio::FlatFileIndex::Results</a></p>
+</li><li>
+<p>module <a
+href="../../../../Bio/FlatFileIndex/DEBUG.html">Bio::FlatFileIndex::DEBUG</a></p>
+</li><li>
+<p>module <a
+href="../../../../Bio/FlatFileIndex/Template.html">Bio::FlatFileIndex::Template</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Template/NameSpace.html">Bio::FlatFileIndex::Template::NameSpace</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/FileID.html">Bio::FlatFileIndex::FileID</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/FileIDs.html">Bio::FlatFileIndex::FileIDs</a></p>
+</li><li>
+<p>module <a
+href="../../../../Bio/FlatFileIndex/Flat_1.html">Bio::FlatFileIndex::Flat_1</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Flat_1/Record.html">Bio::FlatFileIndex::Flat_1::Record</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Flat_1/FlatMappingFile.html">Bio::FlatFileIndex::Flat_1::FlatMappingFile</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Flat_1/PrimaryNameSpace.html">Bio::FlatFileIndex::Flat_1::PrimaryNameSpace</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Flat_1/SecondaryNameSpace.html">Bio::FlatFileIndex::Flat_1::SecondaryNameSpace</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/NameSpaces.html">Bio::FlatFileIndex::NameSpaces</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/DataBank.html">Bio::FlatFileIndex::DataBank</a></p>
+</li></ul>
+
+<h2>Classes/modules in indexer.rb</h2>
+<ul><li>
+<p>module <a
+href="../../../../Bio/FlatFileIndex/Indexer.html">Bio::FlatFileIndex::Indexer</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Indexer/NameSpace.html">Bio::FlatFileIndex::Indexer::NameSpace</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Indexer/NameSpaces.html">Bio::FlatFileIndex::Indexer::NameSpaces</a></p>
+</li><li>
+<p>module <a
+href="../../../../Bio/FlatFileIndex/Indexer/Parser.html">Bio::FlatFileIndex::Indexer::Parser</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Indexer/Parser/TemplateParser.html">Bio::FlatFileIndex::Indexer::Parser::TemplateParser</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Indexer/Parser/GenBankParser.html">Bio::FlatFileIndex::Indexer::Parser::GenBankParser</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Indexer/Parser/GenPeptParser.html">Bio::FlatFileIndex::Indexer::Parser::GenPeptParser</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Indexer/Parser/EMBLParser.html">Bio::FlatFileIndex::Indexer::Parser::EMBLParser</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Indexer/Parser/SPTRParser.html">Bio::FlatFileIndex::Indexer::Parser::SPTRParser</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Indexer/Parser/FastaFormatParser.html">Bio::FlatFileIndex::Indexer::Parser::FastaFormatParser</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Indexer/Parser/MaXMLSequenceParser.html">Bio::FlatFileIndex::Indexer::Parser::MaXMLSequenceParser</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Indexer/Parser/MaXMLClusterParser.html">Bio::FlatFileIndex::Indexer::Parser::MaXMLClusterParser</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Indexer/Parser/BlastDefaultParser.html">Bio::FlatFileIndex::Indexer::Parser::BlastDefaultParser</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/Indexer/Parser/PDBChemicalComponentParser.html">Bio::FlatFileIndex::Indexer::Parser::PDBChemicalComponentParser</a></p>
+</li></ul>
+
+<h2>Classes/modules in bdb.rb</h2>
+<ul><li>
+<p>module Bio::FlatFileIndex::BDBDefault</p>
+</li><li>
+<p>class  Bio::FlatFileIndex::BDBWrapper</p>
+</li><li>
+<p>module <a
+href="../../../../Bio/FlatFileIndex/BDB_1.html">Bio::FlatFileIndex::BDB_1</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/BDB_1/BDBMappingFile.html">Bio::FlatFileIndex::BDB_1::BDBMappingFile</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/BDB_1/PrimaryNameSpace.html">Bio::FlatFileIndex::BDB_1::PrimaryNameSpace</a></p>
+</li><li>
+<p>class  <a
+href="../../../../Bio/FlatFileIndex/BDB_1/SecondaryNameSpace.html">Bio::FlatFileIndex::BDB_1::SecondaryNameSpace</a></p>
+</li></ul>
+
+<h1>References</h1>
+<ul><li>
+<p>((&lt;URL:<a href="http://obda.open-bio.org/">obda.open-bio.org/</a>&gt;))</p>
+</li><li>
+<p>((&lt;URL:<a
+href="http://cvs.open-bio.org/cgi-bin/viewcvs/viewcvs.cgi/obda-specs/?cvsroot=obf-common">cvs.open-bio.org/cgi-bin/viewcvs/viewcvs.cgi/obda-specs/?cvsroot=obf-common</a>&gt;))</p>
+</li></ul>
+
+    </div>
+    
+  </div>
+</body>
+</html>
+

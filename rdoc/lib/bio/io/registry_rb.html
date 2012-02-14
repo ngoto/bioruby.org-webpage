@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>File: registry.rb [BioRuby API documentation]</title>
+
+  <link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet" />
+
+  <script src="../../../js/jquery.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../../js/thickbox-compressed.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../../js/quicksearch.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../../js/darkfish.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+
+<body class="file file-popup">
+  <div id="metadata">
+    <dl>
+      <dt class="modified-date">Last Modified</dt>
+      <dd class="modified-date">2010-10-22 11:48:50 +0900</dd>
+
+      
+      <dt class="requires">Requires</dt>
+      <dd class="requires">
+        <ul>
+        
+          <li>uri</li>
+        
+          <li>net/http</li>
+        
+          <li>bio/command</li>
+        
+          <li>pp</li>
+        
+        </ul>
+      </dd>
+      
+
+      
+    </dl>
+  </div>
+
+  <div id="documentation">
+    
+    <div class="description">
+      <h2>Description</h2>
+      
+<h1>bio/io/registry.rb - OBDA BioRegistry module</h1>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>Copyright</p></td>
+<td>
+<p>Copyright (C) 2002, 2003, 2004, 2005 Toshiaki Katayama
+&lt;k@bioruby.org&gt;</p>
+</td></tr><tr><td class="rdoc-term"><p>License</p></td>
+<td>
+<p>The Ruby License</p>
+</td></tr></table>
+
+<p>$Id:$</p>
+
+<h2>Description</h2>
+
+<p>BioRegistry read the OBDA (Open <a href="../../../Bio.html">Bio</a>
+Database Access) configuration file (seqdatabase.ini) and create a registry
+object.  OBDA is created during the BioHackathon held in Tucson and South
+Africa in 2002 as a project independent set of protocols to access
+biological databases.  The spec is refined in the BioHackathon 2003 held in
+Singapore.</p>
+
+<p>By using the OBDA, user can access to the database by get_database method
+without knowing where and how the database is stored, and each database has
+the get_by_id method to obtain a sequence entry.</p>
+
+<p>Sample configuration file is distributed with BioRuby package which
+consists of stanza format entries as following:</p>
+
+<pre>VERSION=1.00
+
+[myembl]
+protocol=biofetch
+location=http://www.ebi.ac.uk/cgi-bin/dbfetch
+dbname=embl
+
+[mysp]
+protocol=biosql
+location=db.bioruby.org
+dbname=biosql
+driver=mysql
+user=root
+pass= 
+biodbname=swissprot</pre>
+
+<p>The first line means that this configration file is version 1.00.</p>
+
+<p>The [myembl] line defines a user defined database name ‘myembl’ and
+following block indicates how the database can be accessed. In this
+example, the ‘myembl’ database is accecced via the OBDA’s BioFetch protocol
+to the dbfetch server at EBI, where the EMBL database is accessed by the
+name ‘embl’ on the server side.</p>
+
+<p>The [mysp] line defines another database ‘mysp’ which accesses the RDB
+(Relational Database) at the db.bioruby.org via the OBDA’s BioSQL protocol.
+This BioSQL server is running MySQL database as its backend and stores the
+SwissProt database by the name ‘swissprot’ and which can be accessed by
+‘root’ user without password. Note that the db.bioruby.org server is a
+dummy for the explanation.</p>
+
+<p>The configuration file is searched by the following order.</p>
+<ol><li>
+<p>Local file name given to the <a
+href="../../../Bio/Registry.html#method-c-new">Bio::Registry.new(filename)</a>.</p>
+</li><li>
+<p>Remote or local file list given by the environmenetal variable
+‘OBDA_SEARCH_PATH’, which is a ‘+’ separated string of the remote (HTTP)
+and/or local files.</p>
+
+<pre>e.g. OBDA_SEARCH_PATH=&quot;http://example.org/obda.ini+$HOME/lib/myobda.ini&quot;</pre>
+</li><li>
+<p>Local file “$HOME/.bioinformatics/seqdatabase.ini” in the user’s home
+directory.</p>
+</li><li>
+<p>Local file “/etc/bioinformatics/seqdatabase.ini” in the system
+configuration directry.</p>
+</li></ol>
+
+<p>All these configuration files are loaded.  If there are database
+definitions having the same name, the first one is used.</p>
+
+<p>If none of these files can be found, <a
+href="../../../Bio/Registry.html#method-c-new">Bio::Registry.new</a> will
+try to use <a
+href="http://www.open-bio.org/registry/seqdatabase.ini">www.open-bio.org/registry/seqdatabase.ini</a>
+file.</p>
+
+<h2>References</h2>
+<ul><li>
+<p><a href="http://obda.open-bio.org/">obda.open-bio.org/</a></p>
+</li><li>
+<p><a
+href="http://cvs.open-bio.org/cgi-bin/viewcvs/viewcvs.cgi/obda-specs/?cvsroot=obf-common">cvs.open-bio.org/cgi-bin/viewcvs/viewcvs.cgi/obda-specs/?cvsroot=obf-common</a></p>
+</li><li>
+<p><a
+href="http://www.open-bio.org/registry/seqdatabase.ini">www.open-bio.org/registry/seqdatabase.ini</a></p>
+</li></ul>
+
+    </div>
+    
+  </div>
+</body>
+</html>
+

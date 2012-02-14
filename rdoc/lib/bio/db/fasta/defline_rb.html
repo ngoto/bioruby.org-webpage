@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>File: defline.rb [BioRuby API documentation]</title>
+
+  <link type="text/css" media="screen" href="../../../../rdoc.css" rel="stylesheet" />
+
+  <script src="../../../../js/jquery.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../../../js/thickbox-compressed.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../../../js/quicksearch.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../../../js/darkfish.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+
+<body class="file file-popup">
+  <div id="metadata">
+    <dl>
+      <dt class="modified-date">Last Modified</dt>
+      <dd class="modified-date">2010-10-22 11:48:50 +0900</dd>
+
+      
+      <dt class="requires">Requires</dt>
+      <dd class="requires">
+        <ul>
+        
+        </ul>
+      </dd>
+      
+
+      
+    </dl>
+  </div>
+
+  <div id="documentation">
+    
+    <div class="description">
+      <h2>Description</h2>
+      
+<h1>bio/db/fasta/defline.rb - FASTA defline parser class</h1>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>Copyright</p></td>
+<td>
+<p>Copyright (C) 2001, 2002 GOTO Naohisa &lt;ngoto@gen-info.osaka-u.ac.jp&gt;,
+Toshiaki Katayama &lt;k@bioruby.org&gt;</p>
+</td></tr><tr><td class="rdoc-term"><p>License</p></td>
+<td>
+<p>The Ruby License</p>
+</td></tr></table>
+
+<p>$Id: defline.rb,v 1.1.2.1 2008/06/20 13:22:32 ngoto Exp $</p>
+
+<h2>Description</h2>
+
+<p><a href="../../../../Bio/FastaDefline.html">Bio::FastaDefline</a> is a
+parser class for definition line (defline) of the FASTA format.</p>
+
+<h2>Examples</h2>
+
+<pre>rub = Bio::FastaDefline.new('&gt;gi|671595|emb|CAA85678.1| rubisco large subunit [Perovskia abrotanoides]')
+rub.entry_id       ==&gt; 'gi|671595'
+rub.get('emb')     ==&gt; 'CAA85678.1'
+rub.emb            ==&gt; 'CAA85678.1'
+rub.gi             ==&gt; '671595'
+rub.accession      ==&gt; 'CAA85678'
+rub.accessions     ==&gt; [ 'CAA85678' ]
+rub.acc_version    ==&gt; 'CAA85678.1'
+rub.locus          ==&gt; nil
+rub.list_ids       ==&gt; [[&quot;gi&quot;, &quot;671595&quot;],
+                        [&quot;emb&quot;, &quot;CAA85678.1&quot;, nil],
+                        [&quot;Perovskia abrotanoides&quot;]]
+
+ckr = Bio::FastaDefline.new(&quot;&gt;gi|2495000|sp|Q63931|CCKR_CAVPO CHOLECYSTOKININ TYPE A RECEPTOR (CCK-A RECEPTOR) (CCK-AR)\001gi|2147182|pir||I51898 cholecystokinin A receptor - guinea pig\001gi|544724|gb|AAB29504.1| cholecystokinin A receptor; CCK-A receptor [Cavia]&quot;)
+ckr.entry_id      ==&gt; &quot;gi|2495000&quot;
+ckr.sp            ==&gt; &quot;CCKR_CAVPO&quot;
+ckr.pir           ==&gt; &quot;I51898&quot;
+ckr.gb            ==&gt; &quot;AAB29504.1&quot;
+ckr.gi            ==&gt; &quot;2495000&quot;
+ckr.accession     ==&gt; &quot;AAB29504&quot;
+ckr.accessions    ==&gt; [&quot;Q63931&quot;, &quot;AAB29504&quot;]
+ckr.acc_version   ==&gt; &quot;AAB29504.1&quot;
+ckr.locus         ==&gt; nil
+ckr.description   ==&gt;
+  &quot;CHOLECYSTOKININ TYPE A RECEPTOR (CCK-A RECEPTOR) (CCK-AR)&quot;
+ckr.descriptions  ==&gt;
+  [&quot;CHOLECYSTOKININ TYPE A RECEPTOR (CCK-A RECEPTOR) (CCK-AR)&quot;,
+   &quot;cholecystokinin A receptor - guinea pig&quot;,
+   &quot;cholecystokinin A receptor; CCK-A receptor [Cavia]&quot;]
+ckr.words         ==&gt; 
+  [&quot;cavia&quot;, &quot;cck-a&quot;, &quot;cck-ar&quot;, &quot;cholecystokinin&quot;, &quot;guinea&quot;, &quot;pig&quot;,
+   &quot;receptor&quot;, &quot;type&quot;]
+ckr.id_strings    ==&gt;
+  [&quot;2495000&quot;, &quot;Q63931&quot;, &quot;CCKR_CAVPO&quot;, &quot;2147182&quot;, &quot;I51898&quot;,
+   &quot;544724&quot;, &quot;AAB29504.1&quot;, &quot;Cavia&quot;]
+ckr.list_ids      ==&gt;
+  [[&quot;gi&quot;, &quot;2495000&quot;], [&quot;sp&quot;, &quot;Q63931&quot;, &quot;CCKR_CAVPO&quot;],
+   [&quot;gi&quot;, &quot;2147182&quot;], [&quot;pir&quot;, nil, &quot;I51898&quot;], [&quot;gi&quot;, &quot;544724&quot;],
+   [&quot;gb&quot;, &quot;AAB29504.1&quot;, nil], [&quot;Cavia&quot;]]</pre>
+
+<h2>References</h2>
+<ul><li>
+<p>FASTA format (WikiPedia) <a
+href="http://en.wikipedia.org/wiki/FASTA_format">en.wikipedia.org/wiki/FASTA_format</a></p>
+</li><li>
+<p>Fasta format description (NCBI) <a
+href="http://www.ncbi.nlm.nih.gov/BLAST/fasta.shtml">www.ncbi.nlm.nih.gov/BLAST/fasta.shtml</a></p>
+</li></ul>
+
+    </div>
+    
+  </div>
+</body>
+</html>
+

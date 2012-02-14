@@ -1,0 +1,2597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Class: Bio::Blast::Default::Report</title>
+
+  <link rel="stylesheet" href="../../../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../../index.html">Home</a>
+          <a href="../../../index.html#classes">Classes</a>
+          <a href="../../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../../../lib/bio/appl/blast/format0_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/bio/appl/blast/format0.rb">lib/bio/appl/blast/format0.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="../../../Object.html">Object</a></p>
+        
+      </div>
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="Report/HSP.html">Bio::Blast::Default::Report::HSP</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Report/Hit.html">Bio::Blast::Default::Report::Hit</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Report/Iteration.html">Bio::Blast::Default::Report::Iteration</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-c-open">::open</a></li>
+          
+          <li><a href="#method-i-converged-3F">#converged?</a></li>
+          
+          <li><a href="#method-i-db">#db</a></li>
+          
+          <li><a href="#method-i-each">#each</a></li>
+          
+          <li><a href="#method-i-each_hit">#each_hit</a></li>
+          
+          <li><a href="#method-i-each_iteration">#each_iteration</a></li>
+          
+          <li><a href="#method-i-entropy">#entropy</a></li>
+          
+          <li><a href="#method-i-gapped_entropy">#gapped_entropy</a></li>
+          
+          <li><a href="#method-i-gapped_kappa">#gapped_kappa</a></li>
+          
+          <li><a href="#method-i-gapped_lambda">#gapped_lambda</a></li>
+          
+          <li><a href="#method-i-hits">#hits</a></li>
+          
+          <li><a href="#method-i-kappa">#kappa</a></li>
+          
+          <li><a href="#method-i-lambda">#lambda</a></li>
+          
+          <li><a href="#method-i-message">#message</a></li>
+          
+          <li><a href="#method-i-pattern">#pattern</a></li>
+          
+          <li><a href="#method-i-pattern_positions">#pattern_positions</a></li>
+          
+          <li><a href="#method-i-program">#program</a></li>
+          
+          <li><a href="#method-i-query_def">#query_def</a></li>
+          
+          <li><a href="#method-i-query_len">#query_len</a></li>
+          
+          <li><a href="#method-i-reference">#reference</a></li>
+          
+          <li><a href="#method-i-references">#references</a></li>
+          
+          <li><a href="#method-i-to_s">#to_s</a></li>
+          
+          <li><a href="#method-i-version">#version</a></li>
+          
+          <li><a href="#method-i-version_date">#version_date</a></li>
+          
+          <li><a href="#method-i-version_number">#version_number</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../../../ChangeLog.html">ChangeLog</a></li>
+        
+          <li class="file"><a href="../../../KNOWN_ISSUES_rdoc.html">KNOWN_ISSUES.rdoc</a></li>
+        
+          <li class="file"><a href="../../../README_rdoc.html">README.rdoc</a></li>
+        
+          <li class="file"><a href="../../../README_DEV_rdoc.html">README_DEV.rdoc</a></li>
+        
+          <li class="file"><a href="../../../RELEASE_NOTES_rdoc.html">RELEASE_NOTES.rdoc</a></li>
+        
+          <li class="file"><a href="../../../doc/Changes-1_3_rdoc.html">Changes-1.3.rdoc</a></li>
+        
+          <li class="file"><a href="../../../doc/RELEASE_NOTES-1_4_0_rdoc.html">RELEASE_NOTES-1.4.0.rdoc</a></li>
+        
+          <li class="file"><a href="../../../doc/RELEASE_NOTES-1_4_1_rdoc.html">RELEASE_NOTES-1.4.1.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../../Bio.html">Bio</a></li>
+        
+          <li><a href="../../../Bio/AAindex.html">Bio::AAindex</a></li>
+        
+          <li><a href="../../../Bio/AAindex1.html">Bio::AAindex1</a></li>
+        
+          <li><a href="../../../Bio/AAindex2.html">Bio::AAindex2</a></li>
+        
+          <li><a href="../../../Bio/Abif.html">Bio::Abif</a></li>
+        
+          <li><a href="../../../Bio/Abif/DirectoryEntry.html">Bio::Abif::DirectoryEntry</a></li>
+        
+          <li><a href="../../../Bio/Alignment.html">Bio::Alignment</a></li>
+        
+          <li><a href="../../../Bio/Alignment/ArrayExtension.html">Bio::Alignment::ArrayExtension</a></li>
+        
+          <li><a href="../../../Bio/Alignment/EnumerableExtension.html">Bio::Alignment::EnumerableExtension</a></li>
+        
+          <li><a href="../../../Bio/Alignment/FactoryTemplate.html">Bio::Alignment::FactoryTemplate</a></li>
+        
+          <li><a href="../../../Bio/Alignment/FactoryTemplate/FileInFileOut.html">Bio::Alignment::FactoryTemplate::FileInFileOut</a></li>
+        
+          <li><a href="../../../Bio/Alignment/FactoryTemplate/FileInFileOutWithTree.html">Bio::Alignment::FactoryTemplate::FileInFileOutWithTree</a></li>
+        
+          <li><a href="../../../Bio/Alignment/FactoryTemplate/FileInStdoutOut.html">Bio::Alignment::FactoryTemplate::FileInStdoutOut</a></li>
+        
+          <li><a href="../../../Bio/Alignment/FactoryTemplate/Simple.html">Bio::Alignment::FactoryTemplate::Simple</a></li>
+        
+          <li><a href="../../../Bio/Alignment/FactoryTemplate/StdinInFileOut.html">Bio::Alignment::FactoryTemplate::StdinInFileOut</a></li>
+        
+          <li><a href="../../../Bio/Alignment/FactoryTemplate/WrapInputStdin.html">Bio::Alignment::FactoryTemplate::WrapInputStdin</a></li>
+        
+          <li><a href="../../../Bio/Alignment/FactoryTemplate/WrapInputTempfile.html">Bio::Alignment::FactoryTemplate::WrapInputTempfile</a></li>
+        
+          <li><a href="../../../Bio/Alignment/FactoryTemplate/WrapOutputStdout.html">Bio::Alignment::FactoryTemplate::WrapOutputStdout</a></li>
+        
+          <li><a href="../../../Bio/Alignment/FactoryTemplate/WrapOutputTempfile.html">Bio::Alignment::FactoryTemplate::WrapOutputTempfile</a></li>
+        
+          <li><a href="../../../Bio/Alignment/GAP.html">Bio::Alignment::GAP</a></li>
+        
+          <li><a href="../../../Bio/Alignment/HashExtension.html">Bio::Alignment::HashExtension</a></li>
+        
+          <li><a href="../../../Bio/Alignment/MultiFastaFormat.html">Bio::Alignment::MultiFastaFormat</a></li>
+        
+          <li><a href="../../../Bio/Alignment/OriginalAlignment.html">Bio::Alignment::OriginalAlignment</a></li>
+        
+          <li><a href="../../../Bio/Alignment/OriginalPrivate.html">Bio::Alignment::OriginalPrivate</a></li>
+        
+          <li><a href="../../../Bio/Alignment/Output.html">Bio::Alignment::Output</a></li>
+        
+          <li><a href="../../../Bio/Alignment/PropertyMethods.html">Bio::Alignment::PropertyMethods</a></li>
+        
+          <li><a href="../../../Bio/Alignment/SequenceArray.html">Bio::Alignment::SequenceArray</a></li>
+        
+          <li><a href="../../../Bio/Alignment/SequenceHash.html">Bio::Alignment::SequenceHash</a></li>
+        
+          <li><a href="../../../Bio/Alignment/Site.html">Bio::Alignment::Site</a></li>
+        
+          <li><a href="../../../Bio/Alignment/SiteMethods.html">Bio::Alignment::SiteMethods</a></li>
+        
+          <li><a href="../../../Bio/AminoAcid.html">Bio::AminoAcid</a></li>
+        
+          <li><a href="../../../Bio/AminoAcid/Data.html">Bio::AminoAcid::Data</a></li>
+        
+          <li><a href="../../../Bio/Blast.html">Bio::Blast</a></li>
+        
+          <li><a href="../../../Bio/Blast/Bl2seq.html">Bio::Blast::Bl2seq</a></li>
+        
+          <li><a href="../../../Bio/Blast/Bl2seq/Report.html">Bio::Blast::Bl2seq::Report</a></li>
+        
+          <li><a href="../../../Bio/Blast/Bl2seq/Report/HSP.html">Bio::Blast::Bl2seq::Report::HSP</a></li>
+        
+          <li><a href="../../../Bio/Blast/Bl2seq/Report/Hit.html">Bio::Blast::Bl2seq::Report::Hit</a></li>
+        
+          <li><a href="../../../Bio/Blast/Bl2seq/Report/Iteration.html">Bio::Blast::Bl2seq::Report::Iteration</a></li>
+        
+          <li><a href="../../../Bio/Blast/Default.html">Bio::Blast::Default</a></li>
+        
+          <li><a href="../../../Bio/Blast/Default/Report.html">Bio::Blast::Default::Report</a></li>
+        
+          <li><a href="../../../Bio/Blast/Default/Report/HSP.html">Bio::Blast::Default::Report::HSP</a></li>
+        
+          <li><a href="../../../Bio/Blast/Default/Report/Hit.html">Bio::Blast::Default::Report::Hit</a></li>
+        
+          <li><a href="../../../Bio/Blast/Default/Report/Iteration.html">Bio::Blast::Default::Report::Iteration</a></li>
+        
+          <li><a href="../../../Bio/Blast/Default/Report_TBlast.html">Bio::Blast::Default::Report_TBlast</a></li>
+        
+          <li><a href="../../../Bio/Blast/Fastacmd.html">Bio::Blast::Fastacmd</a></li>
+        
+          <li><a href="../../../Bio/Blast/NCBIOptions.html">Bio::Blast::NCBIOptions</a></li>
+        
+          <li><a href="../../../Bio/Blast/RPSBlast.html">Bio::Blast::RPSBlast</a></li>
+        
+          <li><a href="../../../Bio/Blast/RPSBlast/RPSBlastSplitter.html">Bio::Blast::RPSBlast::RPSBlastSplitter</a></li>
+        
+          <li><a href="../../../Bio/Blast/RPSBlast/Report.html">Bio::Blast::RPSBlast::Report</a></li>
+        
+          <li><a href="../../../Bio/Blast/RPSBlast/RPSBlastSplitter.html">Bio::Blast::RPSBlast::Report::FLATFILE_SPLITTER</a></li>
+        
+          <li><a href="../../../Bio/Blast/RPSBlast/Report/Iteration.html">Bio::Blast::RPSBlast::Report::Iteration</a></li>
+        
+          <li><a href="../../../Bio/Blast/Remote.html">Bio::Blast::Remote</a></li>
+        
+          <li><a href="../../../Bio/Blast/Remote/DDBJ.html">Bio::Blast::Remote::DDBJ</a></li>
+        
+          <li><a href="../../../Bio/Blast/Remote/DDBJ/Information.html">Bio::Blast::Remote::DDBJ::Information</a></li>
+        
+          <li><a href="../../../Bio/Blast/Remote/DDBJ.html">Bio::Blast::Remote::Ddbj</a></li>
+        
+          <li><a href="../../../Bio/Blast/Remote/GenomeNet.html">Bio::Blast::Remote::GenomeNet</a></li>
+        
+          <li><a href="../../../Bio/Blast/Remote/GenomeNet/Information.html">Bio::Blast::Remote::GenomeNet::Information</a></li>
+        
+          <li><a href="../../../Bio/Blast/Remote/GenomeNet.html">Bio::Blast::Remote::Genomenet</a></li>
+        
+          <li><a href="../../../Bio/Blast/Remote/Information.html">Bio::Blast::Remote::Information</a></li>
+        
+          <li><a href="../../../Bio/Blast/Report.html">Bio::Blast::Report</a></li>
+        
+          <li><a href="../../../Bio/Blast/Report/BlastXmlSplitter.html">Bio::Blast::Report::BlastXmlSplitter</a></li>
+        
+          <li><a href="../../../Bio/Blast/Report/BlastXmlSplitter.html">Bio::Blast::Report::FLATFILE_SPLITTER</a></li>
+        
+          <li><a href="../../../Bio/Blast/Report/Hit.html">Bio::Blast::Report::Hit</a></li>
+        
+          <li><a href="../../../Bio/Blast/Report/Hsp.html">Bio::Blast::Report::Hsp</a></li>
+        
+          <li><a href="../../../Bio/Blast/Report/Iteration.html">Bio::Blast::Report::Iteration</a></li>
+        
+          <li><a href="../../../Bio/Blast/Report_tab.html">Bio::Blast::Report_tab</a></li>
+        
+          <li><a href="../../../Bio/Blast/WU.html">Bio::Blast::WU</a></li>
+        
+          <li><a href="../../../Bio/Blast/WU/Report.html">Bio::Blast::WU::Report</a></li>
+        
+          <li><a href="../../../Bio/Blast/WU/Report/HSP.html">Bio::Blast::WU::Report::HSP</a></li>
+        
+          <li><a href="../../../Bio/Blast/WU/Report/Hit.html">Bio::Blast::WU::Report::Hit</a></li>
+        
+          <li><a href="../../../Bio/Blast/WU/Report/Iteration.html">Bio::Blast::WU::Report::Iteration</a></li>
+        
+          <li><a href="../../../Bio/Blast/WU/Report_TBlast.html">Bio::Blast::WU::Report_TBlast</a></li>
+        
+          <li><a href="../../../Bio/Blat.html">Bio::Blat</a></li>
+        
+          <li><a href="../../../Bio/Blat/Report.html">Bio::Blat::Report</a></li>
+        
+          <li><a href="../../../Bio/Blat/Report/Hit.html">Bio::Blat::Report::Hit</a></li>
+        
+          <li><a href="../../../Bio/Blat/Report/SegmentPair.html">Bio::Blat::Report::SegmentPair</a></li>
+        
+          <li><a href="../../../Bio/Blat/Report/SeqDesc.html">Bio::Blat::Report::SeqDesc</a></li>
+        
+          <li><a href="../../../Bio/ClustalW.html">Bio::ClustalW</a></li>
+        
+          <li><a href="../../../Bio/ClustalW/Report.html">Bio::ClustalW::Report</a></li>
+        
+          <li><a href="../../../Bio/CodonTable.html">Bio::CodonTable</a></li>
+        
+          <li><a href="../../../Bio/ColorScheme.html">Bio::ColorScheme</a></li>
+        
+          <li><a href="../../../Bio/Command.html">Bio::Command</a></li>
+        
+          <li><a href="../../../Bio/Command/Tmpdir.html">Bio::Command::Tmpdir</a></li>
+        
+          <li><a href="../../../Bio/ContingencyTable.html">Bio::ContingencyTable</a></li>
+        
+          <li><a href="../../../Bio/DAS.html">Bio::DAS</a></li>
+        
+          <li><a href="../../../Bio/DAS/DNA.html">Bio::DAS::DNA</a></li>
+        
+          <li><a href="../../../Bio/DAS/DSN.html">Bio::DAS::DSN</a></li>
+        
+          <li><a href="../../../Bio/DAS/ENTRY_POINT.html">Bio::DAS::ENTRY_POINT</a></li>
+        
+          <li><a href="../../../Bio/DAS/FEATURE.html">Bio::DAS::FEATURE</a></li>
+        
+          <li><a href="../../../Bio/DAS/GFF.html">Bio::DAS::GFF</a></li>
+        
+          <li><a href="../../../Bio/DAS/GROUP.html">Bio::DAS::GROUP</a></li>
+        
+          <li><a href="../../../Bio/DAS/LINK.html">Bio::DAS::LINK</a></li>
+        
+          <li><a href="../../../Bio/DAS/SEGMENT.html">Bio::DAS::SEGMENT</a></li>
+        
+          <li><a href="../../../Bio/DAS/SEQUENCE.html">Bio::DAS::SEQUENCE</a></li>
+        
+          <li><a href="../../../Bio/DAS/TARGET.html">Bio::DAS::TARGET</a></li>
+        
+          <li><a href="../../../Bio/DAS/TYPE.html">Bio::DAS::TYPE</a></li>
+        
+          <li><a href="../../../Bio/DAS/TYPES.html">Bio::DAS::TYPES</a></li>
+        
+          <li><a href="../../../Bio/DB.html">Bio::DB</a></li>
+        
+          <li><a href="../../../Bio/DBGET.html">Bio::DBGET</a></li>
+        
+          <li><a href="../../../Bio/DDBJ.html">Bio::DDBJ</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/REST.html">Bio::DDBJ::REST</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/REST/Blast.html">Bio::DDBJ::REST::Blast</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/REST/ClustalW.html">Bio::DDBJ::REST::ClustalW</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/REST/DDBJ.html">Bio::DDBJ::REST::DDBJ</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/REST/Mafft.html">Bio::DDBJ::REST::Mafft</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/REST/RequestManager.html">Bio::DDBJ::REST::RequestManager</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/REST/WABItemplate.html">Bio::DDBJ::REST::WABItemplate</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/XML.html">Bio::DDBJ::XML</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/XML/Blast.html">Bio::DDBJ::XML::Blast</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/XML/ClustalW.html">Bio::DDBJ::XML::ClustalW</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/XML/DDBJ.html">Bio::DDBJ::XML::DDBJ</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/XML/Fasta.html">Bio::DDBJ::XML::Fasta</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/XML/GetEntry.html">Bio::DDBJ::XML::GetEntry</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/XML/Gib.html">Bio::DDBJ::XML::Gib</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/XML/Gtop.html">Bio::DDBJ::XML::Gtop</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/XML/PML.html">Bio::DDBJ::XML::PML</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/XML/RequestManager.html">Bio::DDBJ::XML::RequestManager</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/XML/RequestManager/REST.html">Bio::DDBJ::XML::RequestManager::REST</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/XML/SRS.html">Bio::DDBJ::XML::SRS</a></li>
+        
+          <li><a href="../../../Bio/DDBJ/XML/TxSearch.html">Bio::DDBJ::XML::TxSearch</a></li>
+        
+          <li><a href="../../../Bio/EBI.html">Bio::EBI</a></li>
+        
+          <li><a href="../../../Bio/EBI/SOAP.html">Bio::EBI::SOAP</a></li>
+        
+          <li><a href="../../../Bio/EBI/SOAP/Citation.html">Bio::EBI::SOAP::Citation</a></li>
+        
+          <li><a href="../../../Bio/EBI/SOAP/ClustalW.html">Bio::EBI::SOAP::ClustalW</a></li>
+        
+          <li><a href="../../../Bio/EBI/SOAP/Dbfetch.html">Bio::EBI::SOAP::Dbfetch</a></li>
+        
+          <li><a href="../../../Bio/EBI/SOAP/Emboss.html">Bio::EBI::SOAP::Emboss</a></li>
+        
+          <li><a href="../../../Bio/EBI/SOAP/Fasta.html">Bio::EBI::SOAP::Fasta</a></li>
+        
+          <li><a href="../../../Bio/EBI/SOAP/InterProScan.html">Bio::EBI::SOAP::InterProScan</a></li>
+        
+          <li><a href="../../../Bio/EBI/SOAP/MPsrch.html">Bio::EBI::SOAP::MPsrch</a></li>
+        
+          <li><a href="../../../Bio/EBI/SOAP/MSD.html">Bio::EBI::SOAP::MSD</a></li>
+        
+          <li><a href="../../../Bio/EBI/SOAP/Muscle.html">Bio::EBI::SOAP::Muscle</a></li>
+        
+          <li><a href="../../../Bio/EBI/SOAP/Ontology.html">Bio::EBI::SOAP::Ontology</a></li>
+        
+          <li><a href="../../../Bio/EBI/SOAP/ScanPS.html">Bio::EBI::SOAP::ScanPS</a></li>
+        
+          <li><a href="../../../Bio/EBI/SOAP/TCoffee.html">Bio::EBI::SOAP::TCoffee</a></li>
+        
+          <li><a href="../../../Bio/EBI/SOAP/WUBlast.html">Bio::EBI::SOAP::WUBlast</a></li>
+        
+          <li><a href="../../../Bio/EMBL.html">Bio::EMBL</a></li>
+        
+          <li><a href="../../../Bio/EMBLDB.html">Bio::EMBLDB</a></li>
+        
+          <li><a href="../../../Bio/EMBLDB/Common.html">Bio::EMBLDB::Common</a></li>
+        
+          <li><a href="../../../Bio/EMBOSS.html">Bio::EMBOSS</a></li>
+        
+          <li><a href="../../../Bio/Ensembl.html">Bio::Ensembl</a></li>
+        
+          <li><a href="../../../Bio/Ensembl/Base.html">Bio::Ensembl::Base</a></li>
+        
+          <li><a href="../../../Bio/Ensembl/Human.html">Bio::Ensembl::Human</a></li>
+        
+          <li><a href="../../../Bio/Ensembl/Mouse.html">Bio::Ensembl::Mouse</a></li>
+        
+          <li><a href="../../../Bio/FANTOM.html">Bio::FANTOM</a></li>
+        
+          <li><a href="../../../Bio/FANTOM/MaXML.html">Bio::FANTOM::MaXML</a></li>
+        
+          <li><a href="../../../Bio/FANTOM/MaXML/Annotation.html">Bio::FANTOM::MaXML::Annotation</a></li>
+        
+          <li><a href="../../../Bio/FANTOM/MaXML/Annotation/DataSrc.html">Bio::FANTOM::MaXML::Annotation::DataSrc</a></li>
+        
+          <li><a href="../../../Bio/FANTOM/MaXML/Annotations.html">Bio::FANTOM::MaXML::Annotations</a></li>
+        
+          <li><a href="../../../Bio/FANTOM/MaXML/Cluster.html">Bio::FANTOM::MaXML::Cluster</a></li>
+        
+          <li><a href="../../../Bio/FANTOM/MaXML/Sequence.html">Bio::FANTOM::MaXML::Sequence</a></li>
+        
+          <li><a href="../../../Bio/FANTOM/MaXML/Sequences.html">Bio::FANTOM::MaXML::Sequences</a></li>
+        
+          <li><a href="../../../Bio/Fasta.html">Bio::Fasta</a></li>
+        
+          <li><a href="../../../Bio/Fasta/Report.html">Bio::Fasta::Report</a></li>
+        
+          <li><a href="../../../Bio/Fasta/Report/FastaFormat10Splitter.html">Bio::Fasta::Report::FLATFILE_SPLITTER</a></li>
+        
+          <li><a href="../../../Bio/Fasta/Report/FastaFormat10Splitter.html">Bio::Fasta::Report::FastaFormat10Splitter</a></li>
+        
+          <li><a href="../../../Bio/Fasta/Report/Hit.html">Bio::Fasta::Report::Hit</a></li>
+        
+          <li><a href="../../../Bio/Fasta/Report/Hit/Query.html">Bio::Fasta::Report::Hit::Query</a></li>
+        
+          <li><a href="../../../Bio/Fasta/Report/Hit/Target.html">Bio::Fasta::Report::Hit::Target</a></li>
+        
+          <li><a href="../../../Bio/Fasta/Report/Program.html">Bio::Fasta::Report::Program</a></li>
+        
+          <li><a href="../../../Bio/FastaDefline.html">Bio::FastaDefline</a></li>
+        
+          <li><a href="../../../Bio/FastaFormat.html">Bio::FastaFormat</a></li>
+        
+          <li><a href="../../../Bio/FastaNumericFormat.html">Bio::FastaNumericFormat</a></li>
+        
+          <li><a href="../../../Bio/Fastq.html">Bio::Fastq</a></li>
+        
+          <li><a href="../../../Bio/Fastq/Error.html">Bio::Fastq::Error</a></li>
+        
+          <li><a href="../../../Bio/Fastq/Error/Diff_ids.html">Bio::Fastq::Error::Diff_ids</a></li>
+        
+          <li><a href="../../../Bio/Fastq/Error/Long_qual.html">Bio::Fastq::Error::Long_qual</a></li>
+        
+          <li><a href="../../../Bio/Fastq/Error/No_atmark.html">Bio::Fastq::Error::No_atmark</a></li>
+        
+          <li><a href="../../../Bio/Fastq/Error/No_ids.html">Bio::Fastq::Error::No_ids</a></li>
+        
+          <li><a href="../../../Bio/Fastq/Error/No_qual.html">Bio::Fastq::Error::No_qual</a></li>
+        
+          <li><a href="../../../Bio/Fastq/Error/No_seq.html">Bio::Fastq::Error::No_seq</a></li>
+        
+          <li><a href="../../../Bio/Fastq/Error/Qual_char.html">Bio::Fastq::Error::Qual_char</a></li>
+        
+          <li><a href="../../../Bio/Fastq/Error/Qual_range.html">Bio::Fastq::Error::Qual_range</a></li>
+        
+          <li><a href="../../../Bio/Fastq/Error/Seq_char.html">Bio::Fastq::Error::Seq_char</a></li>
+        
+          <li><a href="../../../Bio/Fastq/Error/Short_qual.html">Bio::Fastq::Error::Short_qual</a></li>
+        
+          <li><a href="../../../Bio/Fastq/Error/Skipped_unformatted_lines.html">Bio::Fastq::Error::Skipped_unformatted_lines</a></li>
+        
+          <li><a href="../../../Bio/Fastq/FormatData.html">Bio::Fastq::FormatData</a></li>
+        
+          <li><a href="../../../Bio/Fastq/FormatData/FASTQ_ILLUMINA.html">Bio::Fastq::FormatData::FASTQ_ILLUMINA</a></li>
+        
+          <li><a href="../../../Bio/Fastq/FormatData/FASTQ_SANGER.html">Bio::Fastq::FormatData::FASTQ_SANGER</a></li>
+        
+          <li><a href="../../../Bio/Fastq/FormatData/FASTQ_SOLEXA.html">Bio::Fastq::FormatData::FASTQ_SOLEXA</a></li>
+        
+          <li><a href="../../../Bio/Feature.html">Bio::Feature</a></li>
+        
+          <li><a href="../../../Bio/Feature/Qualifier.html">Bio::Feature::Qualifier</a></li>
+        
+          <li><a href="../../../Bio/Features.html">Bio::Features</a></li>
+        
+          <li><a href="../../../Bio/Fetch.html">Bio::Fetch</a></li>
+        
+          <li><a href="../../../Bio/FlatFile.html">Bio::FlatFile</a></li>
+        
+          <li><a href="../../../Bio/FlatFile/AutoDetect.html">Bio::FlatFile::AutoDetect</a></li>
+        
+          <li><a href="../../../Bio/FlatFile/AutoDetect/RuleDebug.html">Bio::FlatFile::AutoDetect::RuleDebug</a></li>
+        
+          <li><a href="../../../Bio/FlatFile/AutoDetect/RuleProc.html">Bio::FlatFile::AutoDetect::RuleProc</a></li>
+        
+          <li><a href="../../../Bio/FlatFile/AutoDetect/RuleRegexp.html">Bio::FlatFile::AutoDetect::RuleRegexp</a></li>
+        
+          <li><a href="../../../Bio/FlatFile/AutoDetect/RuleRegexp2.html">Bio::FlatFile::AutoDetect::RuleRegexp2</a></li>
+        
+          <li><a href="../../../Bio/FlatFile/AutoDetect/RuleSpecial.html">Bio::FlatFile::AutoDetect::RuleSpecial</a></li>
+        
+          <li><a href="../../../Bio/FlatFile/AutoDetect/RuleTemplate.html">Bio::FlatFile::AutoDetect::RuleTemplate</a></li>
+        
+          <li><a href="../../../Bio/FlatFile/AutoDetect/RulesArray.html">Bio::FlatFile::AutoDetect::RulesArray</a></li>
+        
+          <li><a href="../../../Bio/FlatFile/BufferedInputStream.html">Bio::FlatFile::BufferedInputStream</a></li>
+        
+          <li><a href="../../../Bio/FlatFile/Splitter.html">Bio::FlatFile::Splitter</a></li>
+        
+          <li><a href="../../../Bio/FlatFile/Splitter/Default.html">Bio::FlatFile::Splitter::Default</a></li>
+        
+          <li><a href="../../../Bio/FlatFile/Splitter/LineOriented.html">Bio::FlatFile::Splitter::LineOriented</a></li>
+        
+          <li><a href="../../../Bio/FlatFile/Splitter/Template.html">Bio::FlatFile::Splitter::Template</a></li>
+        
+          <li><a href="../../../Bio/FlatFile/UnknownDataFormatError.html">Bio::FlatFile::UnknownDataFormatError</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex.html">Bio::FlatFileIndex</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/BDB_1.html">Bio::FlatFileIndex::BDB_1</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/BDB_1/BDBMappingFile.html">Bio::FlatFileIndex::BDB_1::BDBMappingFile</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/BDB_1/PrimaryNameSpace.html">Bio::FlatFileIndex::BDB_1::PrimaryNameSpace</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/BDB_1/SecondaryNameSpace.html">Bio::FlatFileIndex::BDB_1::SecondaryNameSpace</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/BDBdefault.html">Bio::FlatFileIndex::BDBdefault</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/BDBwrapper.html">Bio::FlatFileIndex::BDBwrapper</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/DEBUG.html">Bio::FlatFileIndex::DEBUG</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/DataBank.html">Bio::FlatFileIndex::DataBank</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/FileID.html">Bio::FlatFileIndex::FileID</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/FileIDs.html">Bio::FlatFileIndex::FileIDs</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Flat_1.html">Bio::FlatFileIndex::Flat_1</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Flat_1/FlatMappingFile.html">Bio::FlatFileIndex::Flat_1::FlatMappingFile</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Flat_1/PrimaryNameSpace.html">Bio::FlatFileIndex::Flat_1::PrimaryNameSpace</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Flat_1/Record.html">Bio::FlatFileIndex::Flat_1::Record</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Flat_1/SecondaryNameSpace.html">Bio::FlatFileIndex::Flat_1::SecondaryNameSpace</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Indexer.html">Bio::FlatFileIndex::Indexer</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Indexer/NameSpace.html">Bio::FlatFileIndex::Indexer::NameSpace</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Indexer/NameSpaces.html">Bio::FlatFileIndex::Indexer::NameSpaces</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Indexer/Parser.html">Bio::FlatFileIndex::Indexer::Parser</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Indexer/Parser/BlastDefaultParser.html">Bio::FlatFileIndex::Indexer::Parser::BlastDefaultParser</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Indexer/Parser/EMBLParser.html">Bio::FlatFileIndex::Indexer::Parser::EMBLParser</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Indexer/Parser/FastaFormatParser.html">Bio::FlatFileIndex::Indexer::Parser::FastaFormatParser</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Indexer/Parser/GenBankParser.html">Bio::FlatFileIndex::Indexer::Parser::GenBankParser</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Indexer/Parser/GenPeptParser.html">Bio::FlatFileIndex::Indexer::Parser::GenPeptParser</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Indexer/Parser/MaXMLClusterParser.html">Bio::FlatFileIndex::Indexer::Parser::MaXMLClusterParser</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Indexer/Parser/MaXMLSequenceParser.html">Bio::FlatFileIndex::Indexer::Parser::MaXMLSequenceParser</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Indexer/Parser/PDBChemicalComponentParser.html">Bio::FlatFileIndex::Indexer::Parser::PDBChemicalComponentParser</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Indexer/Parser/SPTRParser.html">Bio::FlatFileIndex::Indexer::Parser::SPTRParser</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Indexer/Parser/TemplateParser.html">Bio::FlatFileIndex::Indexer::Parser::TemplateParser</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/NameSpaces.html">Bio::FlatFileIndex::NameSpaces</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Results.html">Bio::FlatFileIndex::Results</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Template.html">Bio::FlatFileIndex::Template</a></li>
+        
+          <li><a href="../../../Bio/FlatFileIndex/Template/NameSpace.html">Bio::FlatFileIndex::Template::NameSpace</a></li>
+        
+          <li><a href="../../../Bio/GCG.html">Bio::GCG</a></li>
+        
+          <li><a href="../../../Bio/GCG/Msf.html">Bio::GCG::Msf</a></li>
+        
+          <li><a href="../../../Bio/GCG/Seq.html">Bio::GCG::Seq</a></li>
+        
+          <li><a href="../../../Bio/GFF.html">Bio::GFF</a></li>
+        
+          <li><a href="../../../Bio/GFF/GFF2.html">Bio::GFF::GFF2</a></li>
+        
+          <li><a href="../../../Bio/GFF/GFF2/Escape.html">Bio::GFF::GFF2::Escape</a></li>
+        
+          <li><a href="../../../Bio/GFF/GFF2/MetaData.html">Bio::GFF::GFF2::MetaData</a></li>
+        
+          <li><a href="../../../Bio/GFF/GFF2/Record.html">Bio::GFF::GFF2::Record</a></li>
+        
+          <li><a href="../../../Bio/GFF/GFF2/Record/Value.html">Bio::GFF::GFF2::Record::Value</a></li>
+        
+          <li><a href="../../../Bio/GFF/GFF3.html">Bio::GFF::GFF3</a></li>
+        
+          <li><a href="../../../Bio/GFF/GFF3/Escape.html">Bio::GFF::GFF3::Escape</a></li>
+        
+          <li><a href="../../../Bio/GFF/GFF3/Record.html">Bio::GFF::GFF3::Record</a></li>
+        
+          <li><a href="../../../Bio/GFF/GFF3/Record/Gap.html">Bio::GFF::GFF3::Record::Gap</a></li>
+        
+          <li><a href="../../../Bio/GFF/GFF3/Record/Gap/Code.html">Bio::GFF::GFF3::Record::Gap::Code</a></li>
+        
+          <li><a href="../../../Bio/GFF/GFF3/Record/Target.html">Bio::GFF::GFF3::Record::Target</a></li>
+        
+          <li><a href="../../../Bio/GFF/GFF3/RecordBoundary.html">Bio::GFF::GFF3::RecordBoundary</a></li>
+        
+          <li><a href="../../../Bio/GFF/GFF3/SequenceRegion.html">Bio::GFF::GFF3::SequenceRegion</a></li>
+        
+          <li><a href="../../../Bio/GFF/Record.html">Bio::GFF::Record</a></li>
+        
+          <li><a href="../../../Bio/GO.html">Bio::GO</a></li>
+        
+          <li><a href="../../../Bio/GO/External2go.html">Bio::GO::External2go</a></li>
+        
+          <li><a href="../../../Bio/GO/GeneAssociation.html">Bio::GO::GeneAssociation</a></li>
+        
+          <li><a href="../../../Bio/GO/Ontology.html">Bio::GO::Ontology</a></li>
+        
+          <li><a href="../../../Bio/GenBank.html">Bio::GenBank</a></li>
+        
+          <li><a href="../../../Bio/GenBank/Locus.html">Bio::GenBank::Locus</a></li>
+        
+          <li><a href="../../../Bio/GenPept.html">Bio::GenPept</a></li>
+        
+          <li><a href="../../../Bio/GenPept/Locus.html">Bio::GenPept::Locus</a></li>
+        
+          <li><a href="../../../Bio/Genscan.html">Bio::Genscan</a></li>
+        
+          <li><a href="../../../Bio/Genscan/Report.html">Bio::Genscan::Report</a></li>
+        
+          <li><a href="../../../Bio/Genscan/Report/Exon.html">Bio::Genscan::Report::Exon</a></li>
+        
+          <li><a href="../../../Bio/Genscan/Report/Gene.html">Bio::Genscan::Report::Gene</a></li>
+        
+          <li><a href="../../../Bio/HGC.html">Bio::HGC</a></li>
+        
+          <li><a href="../../../Bio/HGC/HiGet.html">Bio::HGC::HiGet</a></li>
+        
+          <li><a href="../../../Bio/HMMER.html">Bio::HMMER</a></li>
+        
+          <li><a href="../../../Bio/HMMER/Report.html">Bio::HMMER::Report</a></li>
+        
+          <li><a href="../../../Bio/HMMER/Report/Hit.html">Bio::HMMER::Report::Hit</a></li>
+        
+          <li><a href="../../../Bio/HMMER/Report/Hsp.html">Bio::HMMER::Report::Hsp</a></li>
+        
+          <li><a href="../../../Bio/Hinv.html">Bio::Hinv</a></li>
+        
+          <li><a href="../../../Bio/Hinv/Acc2hit.html">Bio::Hinv::Acc2hit</a></li>
+        
+          <li><a href="../../../Bio/Hinv/Common.html">Bio::Hinv::Common</a></li>
+        
+          <li><a href="../../../Bio/Hinv/Hit2acc.html">Bio::Hinv::Hit2acc</a></li>
+        
+          <li><a href="../../../Bio/Hinv/HitCnt.html">Bio::Hinv::HitCnt</a></li>
+        
+          <li><a href="../../../Bio/Hinv/HitDefinition.html">Bio::Hinv::HitDefinition</a></li>
+        
+          <li><a href="../../../Bio/Hinv/HitPubmedId.html">Bio::Hinv::HitPubmedId</a></li>
+        
+          <li><a href="../../../Bio/Hinv/HitXML.html">Bio::Hinv::HitXML</a></li>
+        
+          <li><a href="../../../Bio/Hinv/Hix2hit.html">Bio::Hinv::Hix2hit</a></li>
+        
+          <li><a href="../../../Bio/Hinv/HixCnt.html">Bio::Hinv::HixCnt</a></li>
+        
+          <li><a href="../../../Bio/Hinv/HixRepresent.html">Bio::Hinv::HixRepresent</a></li>
+        
+          <li><a href="../../../Bio/Hinv/HixXML.html">Bio::Hinv::HixXML</a></li>
+        
+          <li><a href="../../../Bio/Hinv/IdSearch.html">Bio::Hinv::IdSearch</a></li>
+        
+          <li><a href="../../../Bio/Hinv/KeywordSearch.html">Bio::Hinv::KeywordSearch</a></li>
+        
+          <li><a href="../../../Bio/Iprscan.html">Bio::Iprscan</a></li>
+        
+          <li><a href="../../../Bio/Iprscan/Report.html">Bio::Iprscan::Report</a></li>
+        
+          <li><a href="../../../Bio/Iprscan/Report/Match.html">Bio::Iprscan::Report::Match</a></li>
+        
+          <li><a href="../../../Bio/KEGG.html">Bio::KEGG</a></li>
+        
+          <li><a href="../../../Bio/KEGG/API.html">Bio::KEGG::API</a></li>
+        
+          <li><a href="../../../Bio/KEGG/BRITE.html">Bio::KEGG::BRITE</a></li>
+        
+          <li><a href="../../../Bio/KEGG/COMPOUND.html">Bio::KEGG::COMPOUND</a></li>
+        
+          <li><a href="../../../Bio/KEGG/Common.html">Bio::KEGG::Common</a></li>
+        
+          <li><a href="../../../Bio/KEGG/Common/DblinksAsHash.html">Bio::KEGG::Common::DblinksAsHash</a></li>
+        
+          <li><a href="../../../Bio/KEGG/Common/GenesAsHash.html">Bio::KEGG::Common::GenesAsHash</a></li>
+        
+          <li><a href="../../../Bio/KEGG/Common/ModulesAsHash.html">Bio::KEGG::Common::ModulesAsHash</a></li>
+        
+          <li><a href="../../../Bio/KEGG/Common/OrthologsAsHash.html">Bio::KEGG::Common::OrthologsAsHash</a></li>
+        
+          <li><a href="../../../Bio/KEGG/Common/PathwaysAsHash.html">Bio::KEGG::Common::PathwaysAsHash</a></li>
+        
+          <li><a href="../../../Bio/KEGG/Common/References.html">Bio::KEGG::Common::References</a></li>
+        
+          <li><a href="../../../Bio/KEGG/Common/StringsAsHash.html">Bio::KEGG::Common::StringsAsHash</a></li>
+        
+          <li><a href="../../../Bio/KEGG/DRUG.html">Bio::KEGG::DRUG</a></li>
+        
+          <li><a href="../../../Bio/KEGG/ENZYME.html">Bio::KEGG::ENZYME</a></li>
+        
+          <li><a href="../../../Bio/KEGG/EXPRESSION.html">Bio::KEGG::EXPRESSION</a></li>
+        
+          <li><a href="../../../Bio/KEGG/GENES.html">Bio::KEGG::GENES</a></li>
+        
+          <li><a href="../../../Bio/KEGG/GENOME.html">Bio::KEGG::GENOME</a></li>
+        
+          <li><a href="../../../Bio/KEGG/GLYCAN.html">Bio::KEGG::GLYCAN</a></li>
+        
+          <li><a href="../../../Bio/KEGG/KGML.html">Bio::KEGG::KGML</a></li>
+        
+          <li><a href="../../../Bio/KEGG/KGML/Entry.html">Bio::KEGG::KGML::Entry</a></li>
+        
+          <li><a href="../../../Bio/KEGG/KGML/Reaction.html">Bio::KEGG::KGML::Reaction</a></li>
+        
+          <li><a href="../../../Bio/KEGG/KGML/Relation.html">Bio::KEGG::KGML::Relation</a></li>
+        
+          <li><a href="../../../Bio/KEGG/Keggtab.html">Bio::KEGG::Keggtab</a></li>
+        
+          <li><a href="../../../Bio/KEGG/Keggtab/DB.html">Bio::KEGG::Keggtab::DB</a></li>
+        
+          <li><a href="../../../Bio/KEGG/MODULE.html">Bio::KEGG::MODULE</a></li>
+        
+          <li><a href="../../../Bio/KEGG/ORTHOLOGY.html">Bio::KEGG::ORTHOLOGY</a></li>
+        
+          <li><a href="../../../Bio/KEGG/PATHWAY.html">Bio::KEGG::PATHWAY</a></li>
+        
+          <li><a href="../../../Bio/KEGG/REACTION.html">Bio::KEGG::REACTION</a></li>
+        
+          <li><a href="../../../Bio/KEGG/Taxonomy.html">Bio::KEGG::Taxonomy</a></li>
+        
+          <li><a href="../../../Bio/KEGGDB.html">Bio::KEGGDB</a></li>
+        
+          <li><a href="../../../Bio/LITDB.html">Bio::LITDB</a></li>
+        
+          <li><a href="../../../Bio/Lasergene.html">Bio::Lasergene</a></li>
+        
+          <li><a href="../../../Bio/Location.html">Bio::Location</a></li>
+        
+          <li><a href="../../../Bio/Locations.html">Bio::Locations</a></li>
+        
+          <li><a href="../../../Bio/MAFFT.html">Bio::MAFFT</a></li>
+        
+          <li><a href="../../../Bio/MAFFT/Report.html">Bio::MAFFT::Report</a></li>
+        
+          <li><a href="../../../Bio/MEDLINE.html">Bio::MEDLINE</a></li>
+        
+          <li><a href="../../../Bio/Map.html">Bio::Map</a></li>
+        
+          <li><a href="../../../Bio/Map/ActsLikeMap.html">Bio::Map::ActsLikeMap</a></li>
+        
+          <li><a href="../../../Bio/Map/ActsLikeMarker.html">Bio::Map::ActsLikeMarker</a></li>
+        
+          <li><a href="../../../Bio/Map/Mapping.html">Bio::Map::Mapping</a></li>
+        
+          <li><a href="../../../Bio/Map/Marker.html">Bio::Map::Marker</a></li>
+        
+          <li><a href="../../../Bio/Map/SimpleMap.html">Bio::Map::SimpleMap</a></li>
+        
+          <li><a href="../../../Bio/Meme.html">Bio::Meme</a></li>
+        
+          <li><a href="../../../Bio/Meme/Mast.html">Bio::Meme::Mast</a></li>
+        
+          <li><a href="../../../Bio/Meme/Mast/Report.html">Bio::Meme::Mast::Report</a></li>
+        
+          <li><a href="../../../Bio/Meme/Motif.html">Bio::Meme::Motif</a></li>
+        
+          <li><a href="../../../Bio/Muscle.html">Bio::Muscle</a></li>
+        
+          <li><a href="../../../Bio/Alignment/MultiFastaFormat.html">Bio::Muscle::DEFAULT_PARSER</a></li>
+        
+          <li><a href="../../../Bio/NBRF.html">Bio::NBRF</a></li>
+        
+          <li><a href="../../../Bio/NCBI.html">Bio::NCBI</a></li>
+        
+          <li><a href="../../../Bio/NCBI/REST.html">Bio::NCBI::REST</a></li>
+        
+          <li><a href="../../../Bio/NCBI/REST/EFetch.html">Bio::NCBI::REST::EFetch</a></li>
+        
+          <li><a href="../../../Bio/NCBI/REST/EFetch/Methods.html">Bio::NCBI::REST::EFetch::Methods</a></li>
+        
+          <li><a href="../../../Bio/NCBI/REST/ESearch.html">Bio::NCBI::REST::ESearch</a></li>
+        
+          <li><a href="../../../Bio/NCBI/REST/ESearch/Methods.html">Bio::NCBI::REST::ESearch::Methods</a></li>
+        
+          <li><a href="../../../Bio/NCBI/SOAP.html">Bio::NCBI::SOAP</a></li>
+        
+          <li><a href="../../../Bio/NCBI/SOAP/EFetch.html">Bio::NCBI::SOAP::EFetch</a></li>
+        
+          <li><a href="../../../Bio/NCBI/SOAP/EFetchLite.html">Bio::NCBI::SOAP::EFetchLite</a></li>
+        
+          <li><a href="../../../Bio/NCBI/SOAP/EUtils.html">Bio::NCBI::SOAP::EUtils</a></li>
+        
+          <li><a href="../../../Bio/NCBI/SOAP/EUtilsLite.html">Bio::NCBI::SOAP::EUtilsLite</a></li>
+        
+          <li><a href="../../../Bio/NCBIDB.html">Bio::NCBIDB</a></li>
+        
+          <li><a href="../../../Bio/NCBIDB/Common.html">Bio::NCBIDB::Common</a></li>
+        
+          <li><a href="../../../Bio/Newick.html">Bio::Newick</a></li>
+        
+          <li><a href="../../../Bio/Newick/ParseError.html">Bio::Newick::ParseError</a></li>
+        
+          <li><a href="../../../Bio/Nexus.html">Bio::Nexus</a></li>
+        
+          <li><a href="../../../Bio/Nexus/CharactersBlock.html">Bio::Nexus::CharactersBlock</a></li>
+        
+          <li><a href="../../../Bio/Nexus/DataBlock.html">Bio::Nexus::DataBlock</a></li>
+        
+          <li><a href="../../../Bio/Nexus/DistancesBlock.html">Bio::Nexus::DistancesBlock</a></li>
+        
+          <li><a href="../../../Bio/Nexus/GenericBlock.html">Bio::Nexus::GenericBlock</a></li>
+        
+          <li><a href="../../../Bio/Nexus/NexusMatrix.html">Bio::Nexus::NexusMatrix</a></li>
+        
+          <li><a href="../../../Bio/Nexus/NexusMatrix/NexusMatrixError.html">Bio::Nexus::NexusMatrix::NexusMatrixError</a></li>
+        
+          <li><a href="../../../Bio/Nexus/NexusParseError.html">Bio::Nexus::NexusParseError</a></li>
+        
+          <li><a href="../../../Bio/Nexus/TaxaBlock.html">Bio::Nexus::TaxaBlock</a></li>
+        
+          <li><a href="../../../Bio/Nexus/TreesBlock.html">Bio::Nexus::TreesBlock</a></li>
+        
+          <li><a href="../../../Bio/Nexus/Util.html">Bio::Nexus::Util</a></li>
+        
+          <li><a href="../../../Bio/NucleicAcid.html">Bio::NucleicAcid</a></li>
+        
+          <li><a href="../../../Bio/NucleicAcid/Data.html">Bio::NucleicAcid::Data</a></li>
+        
+          <li><a href="../../../Bio/PAML.html">Bio::PAML</a></li>
+        
+          <li><a href="../../../Bio/PAML/Baseml.html">Bio::PAML::Baseml</a></li>
+        
+          <li><a href="../../../Bio/PAML/Baseml/Report.html">Bio::PAML::Baseml::Report</a></li>
+        
+          <li><a href="../../../Bio/PAML/Codeml.html">Bio::PAML::Codeml</a></li>
+        
+          <li><a href="../../../Bio/PAML/Codeml/Model.html">Bio::PAML::Codeml::Model</a></li>
+        
+          <li><a href="../../../Bio/PAML/Codeml/PositiveSite.html">Bio::PAML::Codeml::PositiveSite</a></li>
+        
+          <li><a href="../../../Bio/PAML/Codeml/PositiveSites.html">Bio::PAML::Codeml::PositiveSites</a></li>
+        
+          <li><a href="../../../Bio/PAML/Codeml/Rates.html">Bio::PAML::Codeml::Rates</a></li>
+        
+          <li><a href="../../../Bio/PAML/Codeml/Report.html">Bio::PAML::Codeml::Report</a></li>
+        
+          <li><a href="../../../Bio/PAML/Codeml/ReportError.html">Bio::PAML::Codeml::ReportError</a></li>
+        
+          <li><a href="../../../Bio/PAML/Codeml/ReportSingle.html">Bio::PAML::Codeml::ReportSingle</a></li>
+        
+          <li><a href="../../../Bio/PAML/Common.html">Bio::PAML::Common</a></li>
+        
+          <li><a href="../../../Bio/PAML/Common/Report.html">Bio::PAML::Common::Report</a></li>
+        
+          <li><a href="../../../Bio/PAML/Yn00.html">Bio::PAML::Yn00</a></li>
+        
+          <li><a href="../../../Bio/PAML/Yn00/Report.html">Bio::PAML::Yn00::Report</a></li>
+        
+          <li><a href="../../../Bio/PDB.html">Bio::PDB</a></li>
+        
+          <li><a href="../../../Bio/PDB/AtomFinder.html">Bio::PDB::AtomFinder</a></li>
+        
+          <li><a href="../../../Bio/PDB/Chain.html">Bio::PDB::Chain</a></li>
+        
+          <li><a href="../../../Bio/PDB/ChainFinder.html">Bio::PDB::ChainFinder</a></li>
+        
+          <li><a href="../../../Bio/PDB/ChemicalComponent.html">Bio::PDB::ChemicalComponent</a></li>
+        
+          <li><a href="../../../Bio/PDB/ChemicalComponent/Record.html">Bio::PDB::ChemicalComponent::Record</a></li>
+        
+          <li><a href="../../../Bio/PDB/Coordinate.html">Bio::PDB::Coordinate</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType.html">Bio::PDB::DataType</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/ConstLikeMethod.html">Bio::PDB::DataType::ConstLikeMethod</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/Pdb_String.html">Bio::PDB::DataType::Pdb_AChar</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/Pdb_String.html">Bio::PDB::DataType::Pdb_Atom</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/Pdb_LString.html">Bio::PDB::DataType::Pdb_Character</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/Pdb_String.html">Bio::PDB::DataType::Pdb_Date</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/Pdb_String.html">Bio::PDB::DataType::Pdb_IDcode</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/Pdb_Integer.html">Bio::PDB::DataType::Pdb_Integer</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/Pdb_LString.html">Bio::PDB::DataType::Pdb_LString</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/Pdb_List.html">Bio::PDB::DataType::Pdb_List</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/Pdb_Real.html">Bio::PDB::DataType::Pdb_Real</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/Pdb_String.html">Bio::PDB::DataType::Pdb_Residue_name</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/Pdb_SList.html">Bio::PDB::DataType::Pdb_SList</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/Pdb_Specification_list.html">Bio::PDB::DataType::Pdb_Specification_list</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/Pdb_String.html">Bio::PDB::DataType::Pdb_String</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/Pdb_StringRJ.html">Bio::PDB::DataType::Pdb_StringRJ</a></li>
+        
+          <li><a href="../../../Bio/PDB/DataType/Pdb_String.html">Bio::PDB::DataType::Pdb_SymOP</a></li>
+        
+          <li><a href="../../../Bio/PDB/HetatmFinder.html">Bio::PDB::HetatmFinder</a></li>
+        
+          <li><a href="../../../Bio/PDB/Heterogen.html">Bio::PDB::Heterogen</a></li>
+        
+          <li><a href="../../../Bio/PDB/HeterogenFinder.html">Bio::PDB::HeterogenFinder</a></li>
+        
+          <li><a href="../../../Bio/PDB/Model.html">Bio::PDB::Model</a></li>
+        
+          <li><a href="../../../Bio/PDB/ModelFinder.html">Bio::PDB::ModelFinder</a></li>
+        
+          <li><a href="../../../Bio/PDB/Record.html">Bio::PDB::Record</a></li>
+        
+          <li><a href="../../../Bio/PDB/Record/ANISOU.html">Bio::PDB::Record::ANISOU</a></li>
+        
+          <li><a href="../../../Bio/PDB/Record/ATOM.html">Bio::PDB::Record::ATOM</a></li>
+        
+          <li><a href="../../../Bio/PDB/Record/HETATM.html">Bio::PDB::Record::HETATM</a></li>
+        
+          <li><a href="../../../Bio/PDB/Record/Jrnl.html">Bio::PDB::Record::Jrnl</a></li>
+        
+          <li><a href="../../../Bio/PDB/Record/Remark1.html">Bio::PDB::Record::Remark1</a></li>
+        
+          <li><a href="../../../Bio/PDB/Record/Remark2.html">Bio::PDB::Record::Remark2</a></li>
+        
+          <li><a href="../../../Bio/PDB/Residue.html">Bio::PDB::Residue</a></li>
+        
+          <li><a href="../../../Bio/PDB/ResidueFinder.html">Bio::PDB::ResidueFinder</a></li>
+        
+          <li><a href="../../../Bio/PDB/Utils.html">Bio::PDB::Utils</a></li>
+        
+          <li><a href="../../../Bio/PROSITE.html">Bio::PROSITE</a></li>
+        
+          <li><a href="../../../Bio/PSORT.html">Bio::PSORT</a></li>
+        
+          <li><a href="../../../Bio/PSORT/CGIDriver.html">Bio::PSORT::CGIDriver</a></li>
+        
+          <li><a href="../../../Bio/PSORT/IPSORT.html">Bio::PSORT::IPSORT</a></li>
+        
+          <li><a href="../../../Bio/PSORT/PSORT1.html">Bio::PSORT::PSORT1</a></li>
+        
+          <li><a href="../../../Bio/PSORT/PSORT1/Remote.html">Bio::PSORT::PSORT1::Remote</a></li>
+        
+          <li><a href="../../../Bio/PSORT/PSORT1/Report.html">Bio::PSORT::PSORT1::Report</a></li>
+        
+          <li><a href="../../../Bio/PSORT/PSORT2.html">Bio::PSORT::PSORT2</a></li>
+        
+          <li><a href="../../../Bio/PSORT/PSORT2/Remote.html">Bio::PSORT::PSORT2::Remote</a></li>
+        
+          <li><a href="../../../Bio/PSORT/PSORT2/Report.html">Bio::PSORT::PSORT2::Report</a></li>
+        
+          <li><a href="../../../Bio/PSORT/PSORTB.html">Bio::PSORT::PSORTB</a></li>
+        
+          <li><a href="../../../Bio/PSORT/WoLF_PSORT.html">Bio::PSORT::WoLF_PSORT</a></li>
+        
+          <li><a href="../../../Bio/PTS1.html">Bio::PTS1</a></li>
+        
+          <li><a href="../../../Bio/PTS1/Report.html">Bio::PTS1::Report</a></li>
+        
+          <li><a href="../../../Bio/Pathway.html">Bio::Pathway</a></li>
+        
+          <li><a href="../../../Bio/Phylip.html">Bio::Phylip</a></li>
+        
+          <li><a href="../../../Bio/Phylip/DistanceMatrix.html">Bio::Phylip::DistanceMatrix</a></li>
+        
+          <li><a href="../../../Bio/Phylip/PhylipFormat.html">Bio::Phylip::PhylipFormat</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML.html">Bio::PhyloXML</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Accession.html">Bio::PhyloXML::Accession</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Annotation.html">Bio::PhyloXML::Annotation</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/BinaryCharacters.html">Bio::PhyloXML::BinaryCharacters</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/BranchColor.html">Bio::PhyloXML::BranchColor</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/CladeRelation.html">Bio::PhyloXML::CladeRelation</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Confidence.html">Bio::PhyloXML::Confidence</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Date.html">Bio::PhyloXML::Date</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Distribution.html">Bio::PhyloXML::Distribution</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/DomainArchitecture.html">Bio::PhyloXML::DomainArchitecture</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Events.html">Bio::PhyloXML::Events</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Id.html">Bio::PhyloXML::Id</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Node.html">Bio::PhyloXML::Node</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Other.html">Bio::PhyloXML::Other</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Parser.html">Bio::PhyloXML::Parser</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Point.html">Bio::PhyloXML::Point</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Polygon.html">Bio::PhyloXML::Polygon</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Property.html">Bio::PhyloXML::Property</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/ProteinDomain.html">Bio::PhyloXML::ProteinDomain</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Reference.html">Bio::PhyloXML::Reference</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Sequence.html">Bio::PhyloXML::Sequence</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/SequenceRelation.html">Bio::PhyloXML::SequenceRelation</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Taxonomy.html">Bio::PhyloXML::Taxonomy</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Tree.html">Bio::PhyloXML::Tree</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Uri.html">Bio::PhyloXML::Uri</a></li>
+        
+          <li><a href="../../../Bio/PhyloXML/Writer.html">Bio::PhyloXML::Writer</a></li>
+        
+          <li><a href="../../../Bio/Probcons.html">Bio::Probcons</a></li>
+        
+          <li><a href="../../../Bio/Alignment/MultiFastaFormat.html">Bio::Probcons::DEFAULT_PARSER</a></li>
+        
+          <li><a href="../../../Bio/PubMed.html">Bio::PubMed</a></li>
+        
+          <li><a href="../../../Bio/REBASE.html">Bio::REBASE</a></li>
+        
+          <li><a href="../../../Bio/RefSeq.html">Bio::RefSeq</a></li>
+        
+          <li><a href="../../../Bio/Reference.html">Bio::Reference</a></li>
+        
+          <li><a href="../../../Bio/References.html">Bio::References</a></li>
+        
+          <li><a href="../../../Bio/Registry.html">Bio::Registry</a></li>
+        
+          <li><a href="../../../Bio/Registry/DB.html">Bio::Registry::DB</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme.html">Bio::RestrictionEnzyme</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/Analysis.html">Bio::RestrictionEnzyme::Analysis</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/CutSymbol.html">Bio::RestrictionEnzyme::CutSymbol</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/CutSymbol/CutSymbol__.html">Bio::RestrictionEnzyme::CutSymbol::CutSymbol__</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/DenseIntArray.html">Bio::RestrictionEnzyme::DenseIntArray</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/DoubleStranded.html">Bio::RestrictionEnzyme::DoubleStranded</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/DoubleStranded/AlignedStrands.html">Bio::RestrictionEnzyme::DoubleStranded::AlignedStrands</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/DoubleStranded/CutLocationPair.html">Bio::RestrictionEnzyme::DoubleStranded::CutLocationPair</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/DoubleStranded/CutLocationPairInEnzymeNotation.html">Bio::RestrictionEnzyme::DoubleStranded::CutLocationPairInEnzymeNotation</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/DoubleStranded/CutLocations.html">Bio::RestrictionEnzyme::DoubleStranded::CutLocations</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/DoubleStranded/CutLocationsInEnzymeNotation.html">Bio::RestrictionEnzyme::DoubleStranded::CutLocationsInEnzymeNotation</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/DoubleStranded/EnzymeAction.html">Bio::RestrictionEnzyme::DoubleStranded::EnzymeAction</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/Fragments.html">Bio::RestrictionEnzyme::Fragments</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/Range.html">Bio::RestrictionEnzyme::Range</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/Range/CutRange.html">Bio::RestrictionEnzyme::Range::CutRange</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/Range/CutRanges.html">Bio::RestrictionEnzyme::Range::CutRanges</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/Range/HorizontalCutRange.html">Bio::RestrictionEnzyme::Range::HorizontalCutRange</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/Range/SequenceRange.html">Bio::RestrictionEnzyme::Range::SequenceRange</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/Range/SequenceRange/CalculatedCuts.html">Bio::RestrictionEnzyme::Range::SequenceRange::CalculatedCuts</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/Range/SequenceRange/Fragment.html">Bio::RestrictionEnzyme::Range::SequenceRange::Fragment</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/Range/SequenceRange/Fragments.html">Bio::RestrictionEnzyme::Range::SequenceRange::Fragments</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/Range/VerticalCutRange.html">Bio::RestrictionEnzyme::Range::VerticalCutRange</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/SingleStrand.html">Bio::RestrictionEnzyme::SingleStrand</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/SingleStrand/CutLocationsInEnzymeNotation.html">Bio::RestrictionEnzyme::SingleStrand::CutLocationsInEnzymeNotation</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/SingleStrandComplement.html">Bio::RestrictionEnzyme::SingleStrandComplement</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/SortedNumArray.html">Bio::RestrictionEnzyme::SortedNumArray</a></li>
+        
+          <li><a href="../../../Bio/RestrictionEnzyme/StringFormatting.html">Bio::RestrictionEnzyme::StringFormatting</a></li>
+        
+          <li><a href="../../../Bio/SOAPWSDL.html">Bio::SOAPWSDL</a></li>
+        
+          <li><a href="../../../Bio/SOFT.html">Bio::SOFT</a></li>
+        
+          <li><a href="../../../Bio/SOSUI.html">Bio::SOSUI</a></li>
+        
+          <li><a href="../../../Bio/SOSUI/Report.html">Bio::SOSUI::Report</a></li>
+        
+          <li><a href="../../../Bio/SOSUI/Report/TMH.html">Bio::SOSUI::Report::TMH</a></li>
+        
+          <li><a href="../../../Bio/SPTR.html">Bio::SPTR</a></li>
+        
+          <li><a href="../../../Bio/SQL.html">Bio::SQL</a></li>
+        
+          <li><a href="../../../Bio/SQL/Biodatabase.html">Bio::SQL::Biodatabase</a></li>
+        
+          <li><a href="../../../Bio/SQL/Bioentry.html">Bio::SQL::Bioentry</a></li>
+        
+          <li><a href="../../../Bio/SQL/BioentryDbxref.html">Bio::SQL::BioentryDbxref</a></li>
+        
+          <li><a href="../../../Bio/SQL/BioentryPath.html">Bio::SQL::BioentryPath</a></li>
+        
+          <li><a href="../../../Bio/SQL/BioentryQualifierValue.html">Bio::SQL::BioentryQualifierValue</a></li>
+        
+          <li><a href="../../../Bio/SQL/BioentryReference.html">Bio::SQL::BioentryReference</a></li>
+        
+          <li><a href="../../../Bio/SQL/BioentryRelationship.html">Bio::SQL::BioentryRelationship</a></li>
+        
+          <li><a href="../../../Bio/SQL/Biosequence.html">Bio::SQL::Biosequence</a></li>
+        
+          <li><a href="../../../Bio/SQL/Comment.html">Bio::SQL::Comment</a></li>
+        
+          <li><a href="../../../Bio/SQL/Dbxref.html">Bio::SQL::Dbxref</a></li>
+        
+          <li><a href="../../../Bio/SQL/DbxrefQualifierValue.html">Bio::SQL::DbxrefQualifierValue</a></li>
+        
+          <li><a href="../../../Bio/SQL/DummyBase.html">Bio::SQL::DummyBase</a></li>
+        
+          <li><a href="../../../Bio/SQL/Location.html">Bio::SQL::Location</a></li>
+        
+          <li><a href="../../../Bio/SQL/LocationQualifierValue.html">Bio::SQL::LocationQualifierValue</a></li>
+        
+          <li><a href="../../../Bio/SQL/Ontology.html">Bio::SQL::Ontology</a></li>
+        
+          <li><a href="../../../Bio/SQL/Reference.html">Bio::SQL::Reference</a></li>
+        
+          <li><a href="../../../Bio/SQL/Seqfeature.html">Bio::SQL::Seqfeature</a></li>
+        
+          <li><a href="../../../Bio/SQL/SeqfeatureDbxref.html">Bio::SQL::SeqfeatureDbxref</a></li>
+        
+          <li><a href="../../../Bio/SQL/SeqfeaturePath.html">Bio::SQL::SeqfeaturePath</a></li>
+        
+          <li><a href="../../../Bio/SQL/SeqfeatureQualifierValue.html">Bio::SQL::SeqfeatureQualifierValue</a></li>
+        
+          <li><a href="../../../Bio/SQL/SeqfeatureRelationship.html">Bio::SQL::SeqfeatureRelationship</a></li>
+        
+          <li><a href="../../../Bio/SQL/Sequence.html">Bio::SQL::Sequence</a></li>
+        
+          <li><a href="../../../Bio/SQL/Taxon.html">Bio::SQL::Taxon</a></li>
+        
+          <li><a href="../../../Bio/SQL/TaxonName.html">Bio::SQL::TaxonName</a></li>
+        
+          <li><a href="../../../Bio/SQL/Term.html">Bio::SQL::Term</a></li>
+        
+          <li><a href="../../../Bio/SQL/TermDbxref.html">Bio::SQL::TermDbxref</a></li>
+        
+          <li><a href="../../../Bio/SQL/TermPath.html">Bio::SQL::TermPath</a></li>
+        
+          <li><a href="../../../Bio/SQL/TermRelationship.html">Bio::SQL::TermRelationship</a></li>
+        
+          <li><a href="../../../Bio/SQL/TermRelationshipTerm.html">Bio::SQL::TermRelationshipTerm</a></li>
+        
+          <li><a href="../../../Bio/SQL/TermSynonym.html">Bio::SQL::TermSynonym</a></li>
+        
+          <li><a href="../../../Bio/SangerChromatogram.html">Bio::SangerChromatogram</a></li>
+        
+          <li><a href="../../../Bio/Scf.html">Bio::Scf</a></li>
+        
+          <li><a href="../../../Bio/Sequence.html">Bio::Sequence</a></li>
+        
+          <li><a href="../../../Bio/Sequence/AA.html">Bio::Sequence::AA</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Adapter.html">Bio::Sequence::Adapter</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Adapter/BioSQL.html">Bio::Sequence::Adapter::BioSQL</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Adapter/EMBL.html">Bio::Sequence::Adapter::EMBL</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Adapter/FastaFormat.html">Bio::Sequence::Adapter::FastaFormat</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Adapter/FastaNumericFormat.html">Bio::Sequence::Adapter::FastaNumericFormat</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Adapter/Fastq.html">Bio::Sequence::Adapter::Fastq</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Adapter/GenBank.html">Bio::Sequence::Adapter::GenBank</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Adapter/SangerChromatogram.html">Bio::Sequence::Adapter::SangerChromatogram</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Common.html">Bio::Sequence::Common</a></li>
+        
+          <li><a href="../../../Bio/Sequence/DBLink.html">Bio::Sequence::DBLink</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format.html">Bio::Sequence::Format</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/AminoFormatter.html">Bio::Sequence::Format::AminoFormatter</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/Formatter.html">Bio::Sequence::Format::Formatter</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/Formatter/Fasta.html">Bio::Sequence::Format::Formatter::Fasta</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/Formatter/Fasta_ncbi.html">Bio::Sequence::Format::Formatter::Fasta_ncbi</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/Formatter/Fasta_numeric.html">Bio::Sequence::Format::Formatter::Fasta_numeric</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/Formatter/Fastq.html">Bio::Sequence::Format::Formatter::Fastq</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/Formatter/Fastq_illumina.html">Bio::Sequence::Format::Formatter::Fastq_illumina</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/Formatter/Fastq.html">Bio::Sequence::Format::Formatter::Fastq_sanger</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/Formatter/Fastq_solexa.html">Bio::Sequence::Format::Formatter::Fastq_solexa</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/Formatter/Qual.html">Bio::Sequence::Format::Formatter::Qual</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/Formatter/Raw.html">Bio::Sequence::Format::Formatter::Raw</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/FormatterBase.html">Bio::Sequence::Format::FormatterBase</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/INSDFeatureHelper.html">Bio::Sequence::Format::INSDFeatureHelper</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/NucFormatter.html">Bio::Sequence::Format::NucFormatter</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/NucFormatter/Embl.html">Bio::Sequence::Format::NucFormatter::Embl</a></li>
+        
+          <li><a href="../../../Bio/Sequence/Format/NucFormatter/Genbank.html">Bio::Sequence::Format::NucFormatter::Genbank</a></li>
+        
+          <li><a href="../../../Bio/Sequence/NA.html">Bio::Sequence::NA</a></li>
+        
+          <li><a href="../../../Bio/Sequence/NA/MidiTrack.html">Bio::Sequence::NA::MidiTrack</a></li>
+        
+          <li><a href="../../../Bio/Sequence/QualityScore.html">Bio::Sequence::QualityScore</a></li>
+        
+          <li><a href="../../../Bio/Sequence/QualityScore/Converter.html">Bio::Sequence::QualityScore::Converter</a></li>
+        
+          <li><a href="../../../Bio/Sequence/QualityScore/Phred.html">Bio::Sequence::QualityScore::Phred</a></li>
+        
+          <li><a href="../../../Bio/Sequence/QualityScore/Solexa.html">Bio::Sequence::QualityScore::Solexa</a></li>
+        
+          <li><a href="../../../Bio/Sequence/SequenceMasker.html">Bio::Sequence::SequenceMasker</a></li>
+        
+          <li><a href="../../../Bio/Shell.html">Bio::Shell</a></li>
+        
+          <li><a href="../../../Bio/Shell/ColoredCodonTable.html">Bio::Shell::ColoredCodonTable</a></li>
+        
+          <li><a href="../../../Bio/Shell/Core.html">Bio::Shell::Core</a></li>
+        
+          <li><a href="../../../Bio/Shell/Demo.html">Bio::Shell::Demo</a></li>
+        
+          <li><a href="../../../Bio/Shell/Ghost.html">Bio::Shell::Ghost</a></li>
+        
+          <li><a href="../../../Bio/Shell/Irb.html">Bio::Shell::Irb</a></li>
+        
+          <li><a href="../../../Bio/Shell/Private.html">Bio::Shell::Private</a></li>
+        
+          <li><a href="../../../Bio/Shell/Script.html">Bio::Shell::Script</a></li>
+        
+          <li><a href="../../../Bio/Shell/Setup.html">Bio::Shell::Setup</a></li>
+        
+          <li><a href="../../../Bio/Shell/Web.html">Bio::Shell::Web</a></li>
+        
+          <li><a href="../../../Bio/Shell/Web/Results.html">Bio::Shell::Web::Results</a></li>
+        
+          <li><a href="../../../Bio/SiRNA.html">Bio::SiRNA</a></li>
+        
+          <li><a href="../../../Bio/SiRNA/Pair.html">Bio::SiRNA::Pair</a></li>
+        
+          <li><a href="../../../Bio/SiRNA/ShRNA.html">Bio::SiRNA::ShRNA</a></li>
+        
+          <li><a href="../../../Bio/Sim4.html">Bio::Sim4</a></li>
+        
+          <li><a href="../../../Bio/Sim4/Report.html">Bio::Sim4::Report</a></li>
+        
+          <li><a href="../../../Bio/Sim4/Report/Hit.html">Bio::Sim4::Report::Hit</a></li>
+        
+          <li><a href="../../../Bio/Sim4/Report/Segment.html">Bio::Sim4::Report::Segment</a></li>
+        
+          <li><a href="../../../Bio/Sim4/Report/SegmentPair.html">Bio::Sim4::Report::SegmentPair</a></li>
+        
+          <li><a href="../../../Bio/Sim4/Report/SeqDesc.html">Bio::Sim4::Report::SeqDesc</a></li>
+        
+          <li><a href="../../../Bio/Spidey.html">Bio::Spidey</a></li>
+        
+          <li><a href="../../../Bio/Spidey/Report.html">Bio::Spidey::Report</a></li>
+        
+          <li><a href="../../../Bio/Spidey/Report/Hit.html">Bio::Spidey::Report::Hit</a></li>
+        
+          <li><a href="../../../Bio/Spidey/Report/Segment.html">Bio::Spidey::Report::Segment</a></li>
+        
+          <li><a href="../../../Bio/Spidey/Report/SegmentPair.html">Bio::Spidey::Report::SegmentPair</a></li>
+        
+          <li><a href="../../../Bio/Spidey/Report/SeqDesc.html">Bio::Spidey::Report::SeqDesc</a></li>
+        
+          <li><a href="../../../Bio/SwissProt.html">Bio::SwissProt</a></li>
+        
+          <li><a href="../../../Bio/TMHMM.html">Bio::TMHMM</a></li>
+        
+          <li><a href="../../../Bio/TMHMM/Report.html">Bio::TMHMM::Report</a></li>
+        
+          <li><a href="../../../Bio/TMHMM/TMH.html">Bio::TMHMM::TMH</a></li>
+        
+          <li><a href="../../../Bio/TRANSFAC.html">Bio::TRANSFAC</a></li>
+        
+          <li><a href="../../../Bio/TRANSFAC/CELL.html">Bio::TRANSFAC::CELL</a></li>
+        
+          <li><a href="../../../Bio/TRANSFAC/CLASS.html">Bio::TRANSFAC::CLASS</a></li>
+        
+          <li><a href="../../../Bio/TRANSFAC/FACTOR.html">Bio::TRANSFAC::FACTOR</a></li>
+        
+          <li><a href="../../../Bio/TRANSFAC/GENE.html">Bio::TRANSFAC::GENE</a></li>
+        
+          <li><a href="../../../Bio/TRANSFAC/MATRIX.html">Bio::TRANSFAC::MATRIX</a></li>
+        
+          <li><a href="../../../Bio/TRANSFAC/SITE.html">Bio::TRANSFAC::SITE</a></li>
+        
+          <li><a href="../../../Bio/TargetP.html">Bio::TargetP</a></li>
+        
+          <li><a href="../../../Bio/TargetP/Report.html">Bio::TargetP::Report</a></li>
+        
+          <li><a href="../../../Bio/Taxonomy.html">Bio::Taxonomy</a></li>
+        
+          <li><a href="../../../Bio/Tcoffee.html">Bio::Tcoffee</a></li>
+        
+          <li><a href="../../../Bio/ClustalW/Report.html">Bio::Tcoffee::DEFAULT_PARSER</a></li>
+        
+          <li><a href="../../../Bio/TogoWS.html">Bio::TogoWS</a></li>
+        
+          <li><a href="../../../Bio/TogoWS/AccessWait.html">Bio::TogoWS::AccessWait</a></li>
+        
+          <li><a href="../../../Bio/TogoWS/REST.html">Bio::TogoWS::REST</a></li>
+        
+          <li><a href="../../../Bio/TrEMBL.html">Bio::TrEMBL</a></li>
+        
+          <li><a href="../../../Bio/Tree.html">Bio::Tree</a></li>
+        
+          <li><a href="../../../Bio/Tree/Edge.html">Bio::Tree::Edge</a></li>
+        
+          <li><a href="../../../Bio/Tree/NoPathError.html">Bio::Tree::NoPathError</a></li>
+        
+          <li><a href="../../../Bio/Tree/Node.html">Bio::Tree::Node</a></li>
+        
+          <li><a href="../../../Bio/UniProt.html">Bio::UniProt</a></li>
+        
+          <li><a href="../../../BiorubyController.html">BiorubyController</a></li>
+        
+          <li><a href="../../../BiorubyGenerator.html">BiorubyGenerator</a></li>
+        
+          <li><a href="../../../BiorubyHelper.html">BiorubyHelper</a></li>
+        
+          <li><a href="../../../Hash.html">Hash</a></li>
+        
+          <li><a href="../../../Object.html">Object</a></li>
+        
+          <li><a href="../../../String.html">String</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">Bio::Blast::Default::Report</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="Report.html">Bio::Blast::Default::Report</a> parses <a
+href="../../NCBI.html">NCBI</a> BLAST default output and stores information
+in the data. It may store some <a
+href="Report/Iteration.html">Bio::Blast::Default::Report::Iteration</a>
+objects.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="DELIMITER">DELIMITER</a></dt>
+          
+          <dd class="description"><p>Delimiter of each entry. <a href="../../FlatFile.html">Bio::FlatFile</a>
+uses it.</p></dd>
+          
+        
+          <dt><a name="DELIMITER_OVERRUN">DELIMITER_OVERRUN</a></dt>
+          
+          <dd class="description"><p>(Integer) excess read size included in <a
+href="Report.html#DELIMITER">DELIMITER</a>.</p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="db_len-attribute-method" class="method-detail">
+          <a name="db_len"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">db_len</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          <p>number of letters in database</p>
+          
+          </div>
+        </div>
+        
+        <div id="db_num-attribute-method" class="method-detail">
+          <a name="db_num"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">db_num</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          <p>number of sequences in database</p>
+          
+          </div>
+        </div>
+        
+        <div id="eff_space-attribute-method" class="method-detail">
+          <a name="eff_space"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">eff_space</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          <p>effective length of the database</p>
+          
+          </div>
+        </div>
+        
+        <div id="entry_overrun-attribute-method" class="method-detail">
+          <a name="entry_overrun"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">entry_overrun</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          <p>piece of next entry. <a href="../../FlatFile.html">Bio::FlatFile</a> uses
+it.</p>
+          
+          </div>
+        </div>
+        
+        <div id="expect-attribute-method" class="method-detail">
+          <a name="expect"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">expect</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          <p>e-value threshold specified when BLAST was executed</p>
+          
+          </div>
+        </div>
+        
+        <div id="gap_extend-attribute-method" class="method-detail">
+          <a name="gap_extend"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">gap_extend</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          <p>gap extend penalty</p>
+          
+          </div>
+        </div>
+        
+        <div id="gap_open-attribute-method" class="method-detail">
+          <a name="gap_open"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">gap_open</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          <p>gap open penalty</p>
+          
+          </div>
+        </div>
+        
+        <div id="iterations-attribute-method" class="method-detail">
+          <a name="iterations"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">iterations</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          <p>(PSI-BLAST) Returns iterations. It returns an array of <a
+href="Report/Iteration.html">Bio::Blast::Default::Report::Iteration</a>
+class. Note that normal blastall result usually contains one iteration.</p>
+          
+          </div>
+        </div>
+        
+        <div id="matrix-attribute-method" class="method-detail">
+          <a name="matrix"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">matrix</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          <p>name of the matrix</p>
+          
+          </div>
+        </div>
+        
+        <div id="num_hits-attribute-method" class="method-detail">
+          <a name="num_hits"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">num_hits</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          <p>number of hits. Note that this may differ from <tt>hits.size</tt>.</p>
+          
+          </div>
+        </div>
+        
+        <div id="posted_date-attribute-method" class="method-detail">
+          <a name="posted_date"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">posted_date</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          <p>posted date of the database</p>
+          
+          </div>
+        </div>
+        
+        <div id="sc_match-attribute-method" class="method-detail">
+          <a name="sc_match"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">sc_match</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          <p>match score of the matrix</p>
+          
+          </div>
+        </div>
+        
+        <div id="sc_mismatch-attribute-method" class="method-detail">
+          <a name="sc_mismatch"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">sc_mismatch</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          <p>mismatch score of the matrix</p>
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(str)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Creates a new <a href="Report.html">Report</a> object from BLAST result
+text.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">str</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/\A\s+/</span>, <span class="ruby-string">''</span>)
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">/\n(T?BLAST.*)/</span>, <span class="ruby-string">&quot;\n&quot;</span>) <span class="ruby-comment"># remove trailing entries for sure</span>
+  <span class="ruby-ivar">@entry_overrun</span> = <span class="ruby-node">$1</span>
+  <span class="ruby-ivar">@entry</span> = <span class="ruby-identifier">str</span>
+  <span class="ruby-identifier">data</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/(?:^[ \t]*\n)+/</span>)
+
+  <span class="ruby-identifier">format0_split_headers</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-ivar">@iterations</span> = <span class="ruby-identifier">format0_split_search</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-identifier">format0_split_stat_params</span>(<span class="ruby-identifier">data</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+        <div id="open-method" class="method-detail ">
+          <a name="method-c-open"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">open</span><span
+              class="method-args">(filename, *mode)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Opens file by using <a
+href="../../FlatFile.html#method-c-open">Bio::FlatFile.open</a>.</p>
+            
+
+            
+            <div class="method-source-code" id="open-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>, *<span class="ruby-identifier">mode</span>)
+  <span class="ruby-constant">Bio</span><span class="ruby-operator">::</span><span class="ruby-constant">FlatFile</span>.<span class="ruby-identifier">open</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">filename</span>, *<span class="ruby-identifier">mode</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- open-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- open-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="converged-3F-method" class="method-detail ">
+          <a name="method-i-converged-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">converged?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>(PSI-BLAST) Same as <tt>iterations.last.converged?</tt>. Returns true if
+the last iteration is converged, otherwise, returns false.</p>
+            
+
+            
+            <div class="method-source-code" id="converged-3F-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 221</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">converged?</span>
+  <span class="ruby-ivar">@iterations</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">converged?</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- converged-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- converged-3F-method -->
+
+      
+        <div id="db-method" class="method-detail ">
+          <a name="method-i-db"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">db</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the name (filename or title) of the database.</p>
+            
+
+            
+            <div class="method-source-code" id="db-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 245</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">db</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-ivar">@db</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-regexp">/Database *\: *(.*)/</span> <span class="ruby-operator">=~</span> <span class="ruby-ivar">@f0database</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">a</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/^/</span>)
+      <span class="ruby-identifier">a</span>.<span class="ruby-identifier">pop</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+      <span class="ruby-ivar">@db</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/\s+\z/</span>, <span class="ruby-string">''</span>) }.<span class="ruby-identifier">join</span>(<span class="ruby-string">' '</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-comment">#unless</span>
+  <span class="ruby-ivar">@db</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- db-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- db-method -->
+
+      
+        <div id="each-method" class="method-detail method-alias">
+          <a name="method-i-each"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">each</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Report.html#method-i-each_hit">each_hit</a>
+          </div>
+          
+        </div><!-- each-method -->
+
+      
+        <div id="each_hit-method" class="method-detail ">
+          <a name="method-i-each_hit"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">each_hit</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Iterates over each hit of the last iteration. Same as
+<tt>iterations.last.each_hit</tt>. Yields a <a
+href="Report/Hit.html">Bio::Blast::Default::Report::Hit</a> object. This is
+very useful in most cases, e.g. for blastall results.</p>
+            
+
+            
+            <div class="method-source-code" id="each_hit-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_hit</span>
+  <span class="ruby-ivar">@iterations</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">x</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- each_hit-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Report.html#method-i-each">each</a>
+          </div>
+          
+
+          
+        </div><!-- each_hit-method -->
+
+      
+        <div id="each_iteration-method" class="method-detail ">
+          <a name="method-i-each_iteration"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">each_iteration</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>(PSI-BLAST) Iterates over each iteration. Same as <tt>iterations.each</tt>.
+Yields a <a
+href="Report/Iteration.html">Bio::Blast::Default::Report::Iteration</a>
+object.</p>
+            
+
+            
+            <div class="method-source-code" id="each_iteration-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_iteration</span>
+  <span class="ruby-ivar">@iterations</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">x</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- each_iteration-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- each_iteration-method -->
+
+      
+        <div id="entropy-method" class="method-detail ">
+          <a name="method-i-entropy"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">entropy</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Same as <tt>iterations.last.entropy</tt>.</p>
+            
+
+            
+            <div class="method-source-code" id="entropy-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">entropy</span>;        <span class="ruby-ivar">@iterations</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">entropy</span>;        <span class="ruby-keyword">end</span></pre>
+            </div><!-- entropy-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- entropy-method -->
+
+      
+        <div id="gapped_entropy-method" class="method-detail ">
+          <a name="method-i-gapped_entropy"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">gapped_entropy</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Same as <tt>iterations.last.gapped_entropy</tt>.</p>
+            
+
+            
+            <div class="method-source-code" id="gapped_entropy-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gapped_entropy</span>; <span class="ruby-ivar">@iterations</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">gapped_entropy</span>; <span class="ruby-keyword">end</span></pre>
+            </div><!-- gapped_entropy-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- gapped_entropy-method -->
+
+      
+        <div id="gapped_kappa-method" class="method-detail ">
+          <a name="method-i-gapped_kappa"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">gapped_kappa</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Same as <tt>iterations.last.gapped_kappa</tt>.</p>
+            
+
+            
+            <div class="method-source-code" id="gapped_kappa-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gapped_kappa</span>;   <span class="ruby-ivar">@iterations</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">gapped_kappa</span>;   <span class="ruby-keyword">end</span></pre>
+            </div><!-- gapped_kappa-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- gapped_kappa-method -->
+
+      
+        <div id="gapped_lambda-method" class="method-detail ">
+          <a name="method-i-gapped_lambda"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">gapped_lambda</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Same as <tt>iterations.last.gapped_lambda</tt>.</p>
+            
+
+            
+            <div class="method-source-code" id="gapped_lambda-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gapped_lambda</span>;  <span class="ruby-ivar">@iterations</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">gapped_lambda</span>;  <span class="ruby-keyword">end</span></pre>
+            </div><!-- gapped_lambda-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- gapped_lambda-method -->
+
+      
+        <div id="hits-method" class="method-detail ">
+          <a name="method-i-hits"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">hits</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Same as <tt>iterations.last.hits</tt>. Returns the last iteration’s hits.
+Returns an array of <a
+href="Report/Hit.html">Bio::Blast::Default::Report::Hit</a> object. This is
+very useful in most cases, e.g. for blastall results.</p>
+            
+
+            
+            <div class="method-source-code" id="hits-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hits</span>
+  <span class="ruby-ivar">@iterations</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">hits</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- hits-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- hits-method -->
+
+      
+        <div id="kappa-method" class="method-detail ">
+          <a name="method-i-kappa"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">kappa</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Same as <tt>iterations.last.kappa</tt>.</p>
+            
+
+            
+            <div class="method-source-code" id="kappa-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">kappa</span>;          <span class="ruby-ivar">@iterations</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">kappa</span>;          <span class="ruby-keyword">end</span></pre>
+            </div><!-- kappa-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- kappa-method -->
+
+      
+        <div id="lambda-method" class="method-detail ">
+          <a name="method-i-lambda"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">lambda</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Same as <tt>iterations.last.lambda</tt>.</p>
+            
+
+            
+            <div class="method-source-code" id="lambda-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lambda</span>;         <span class="ruby-ivar">@iterations</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">lambda</span>;         <span class="ruby-keyword">end</span></pre>
+            </div><!-- lambda-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- lambda-method -->
+
+      
+        <div id="message-method" class="method-detail ">
+          <a name="method-i-message"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">message</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>(PSI-BLAST) Same as <tt>iterations.last.message</tt>.</p>
+            
+
+            
+            <div class="method-source-code" id="message-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 213</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">message</span>
+  <span class="ruby-ivar">@iterations</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">message</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- message-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- message-method -->
+
+      
+        <div id="pattern-method" class="method-detail ">
+          <a name="method-i-pattern"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">pattern</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>(PHI-BLAST) Same as <tt>iterations.first.pattern</tt>. Note that it returns
+the FIRST iteration’s value.</p>
+            
+
+            
+            <div class="method-source-code" id="pattern-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 173</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pattern</span>; <span class="ruby-ivar">@iterations</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">pattern</span>; <span class="ruby-keyword">end</span></pre>
+            </div><!-- pattern-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pattern-method -->
+
+      
+        <div id="pattern_positions-method" class="method-detail ">
+          <a name="method-i-pattern_positions"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">pattern_positions</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>(PHI-BLAST) Same as <tt>iterations.first.pattern_positions</tt>. Note that
+it returns the FIRST iteration’s value.</p>
+            
+
+            
+            <div class="method-source-code" id="pattern_positions-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pattern_positions</span>
+  <span class="ruby-ivar">@iterations</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">pattern_positions</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- pattern_positions-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pattern_positions-method -->
+
+      
+        <div id="program-method" class="method-detail ">
+          <a name="method-i-program"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">program</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns program name.</p>
+            
+
+            
+            <div class="method-source-code" id="program-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">program</span>;        <span class="ruby-identifier">format0_parse_header</span>; <span class="ruby-ivar">@program</span>;        <span class="ruby-keyword">end</span></pre>
+            </div><!-- program-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- program-method -->
+
+      
+        <div id="query_def-method" class="method-detail ">
+          <a name="method-i-query_def"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">query_def</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns definition of the query.</p>
+            
+
+            
+            <div class="method-source-code" id="query_def-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">query_def</span>; <span class="ruby-identifier">format0_parse_query</span>; <span class="ruby-ivar">@query_def</span>; <span class="ruby-keyword">end</span></pre>
+            </div><!-- query_def-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- query_def-method -->
+
+      
+        <div id="query_len-method" class="method-detail ">
+          <a name="method-i-query_len"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">query_len</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns length of the query.</p>
+            
+
+            
+            <div class="method-source-code" id="query_len-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">query_len</span>; <span class="ruby-identifier">format0_parse_query</span>; <span class="ruby-ivar">@query_len</span>; <span class="ruby-keyword">end</span></pre>
+            </div><!-- query_len-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- query_len-method -->
+
+      
+        <div id="reference-method" class="method-detail ">
+          <a name="method-i-reference"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">reference</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the bibliography reference of the BLAST software.  Note that this
+method shows only the first reference. When you want to get additional
+references, you can use <tt>references</tt> method.</p>
+            
+
+            
+            <div class="method-source-code" id="reference-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reference</span>
+  <span class="ruby-identifier">references</span>[<span class="ruby-value">0</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- reference-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- reference-method -->
+
+      
+        <div id="references-method" class="method-detail ">
+          <a name="method-i-references"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">references</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns the bibliography references of the BLAST software.  Returns an
+array of strings.</p>
+            
+
+            
+            <div class="method-source-code" id="references-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 235</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">references</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-ivar">@references</span>)
+    <span class="ruby-ivar">@references</span> = <span class="ruby-ivar">@f0references</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\s+/</span>, <span class="ruby-string">' '</span>).<span class="ruby-identifier">strip</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-comment">#unless</span>
+  <span class="ruby-ivar">@references</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- references-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- references-method -->
+
+      
+        <div id="to_s-method" class="method-detail ">
+          <a name="method-i-to_s"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_s</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns whole entry as a string.</p>
+            
+
+            
+            <div class="method-source-code" id="to_s-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>; <span class="ruby-ivar">@entry</span>; <span class="ruby-keyword">end</span></pre>
+            </div><!-- to_s-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_s-method -->
+
+      
+        <div id="version-method" class="method-detail ">
+          <a name="method-i-version"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">version</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns version of the program.</p>
+            
+
+            
+            <div class="method-source-code" id="version-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">version</span>;        <span class="ruby-identifier">format0_parse_header</span>; <span class="ruby-ivar">@version</span>;        <span class="ruby-keyword">end</span></pre>
+            </div><!-- version-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- version-method -->
+
+      
+        <div id="version_date-method" class="method-detail ">
+          <a name="method-i-version_date"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">version_date</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns released date of the program.</p>
+            
+
+            
+            <div class="method-source-code" id="version_date-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">version_date</span>;   <span class="ruby-identifier">format0_parse_header</span>; <span class="ruby-ivar">@version_date</span>;   <span class="ruby-keyword">end</span></pre>
+            </div><!-- version_date-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- version_date-method -->
+
+      
+        <div id="version_number-method" class="method-detail ">
+          <a name="method-i-version_number"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">version_number</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns version number string of the program.</p>
+            
+
+            
+            <div class="method-source-code" id="version_number-source">
+<pre>
+<span class="ruby-comment"># File lib/bio/appl/blast/format0.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">version_number</span>; <span class="ruby-identifier">format0_parse_header</span>; <span class="ruby-ivar">@version_number</span>; <span class="ruby-keyword">end</span></pre>
+            </div><!-- version_number-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- version_number-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

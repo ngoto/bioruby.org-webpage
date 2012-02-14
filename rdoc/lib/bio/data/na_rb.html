@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>File: na.rb [BioRuby API documentation]</title>
+
+  <link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet" />
+
+  <script src="../../../js/jquery.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../../js/thickbox-compressed.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../../js/quicksearch.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="../../../js/darkfish.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+
+<body class="file file-popup">
+  <div id="metadata">
+    <dl>
+      <dt class="modified-date">Last Modified</dt>
+      <dd class="modified-date">2010-10-22 11:48:50 +0900</dd>
+
+      
+      <dt class="requires">Requires</dt>
+      <dd class="requires">
+        <ul>
+        
+        </ul>
+      </dd>
+      
+
+      
+    </dl>
+  </div>
+
+  <div id="documentation">
+    
+    <div class="description">
+      <h2>Description</h2>
+      
+<h1>bio/data/na.rb - Nucleic Acids</h1>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>Copyright</p></td>
+<td>
+<p>Copyright (C) 2001, 2005 Toshiaki Katayama &lt;k@bioruby.org&gt;</p>
+</td></tr><tr><td class="rdoc-term"><p>License</p></td>
+<td>
+<p>The Ruby License</p>
+</td></tr></table>
+
+<p>$Id:$</p>
+
+<h2>Synopsis</h2>
+
+<p><a href="../../../Bio/NucleicAcid.html">Bio::NucleicAcid</a> class contains
+data related to nucleic acids.</p>
+
+<h2>Usage</h2>
+
+<p>Examples:</p>
+
+<pre>require 'bio'
+
+puts &quot;### na = Bio::NucleicAcid.new&quot;
+na = Bio::NucleicAcid.new
+
+puts &quot;# na.to_re('yrwskmbdhvnatgc')&quot;
+p na.to_re('yrwskmbdhvnatgc')
+
+puts &quot;# Bio::NucleicAcid.to_re('yrwskmbdhvnatgc')&quot;
+p Bio::NucleicAcid.to_re('yrwskmbdhvnatgc')
+
+puts &quot;# na.weight('A')&quot;
+p na.weight('A')
+
+puts &quot;# Bio::NucleicAcid.weight('A')&quot;
+p Bio::NucleicAcid.weight('A')
+
+puts &quot;# na.weight('atgc')&quot;
+p na.weight('atgc')
+
+puts &quot;# Bio::NucleicAcid.weight('atgc')&quot;
+p Bio::NucleicAcid.weight('atgc')</pre>
+
+    </div>
+    
+  </div>
+</body>
+</html>
+
