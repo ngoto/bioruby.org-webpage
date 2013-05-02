@@ -1,0 +1,9 @@
+#
+# Ignore backup files and directories
+*~
+# Ignore all directories in the document root
+# (because of hiding OBF server specific settings of MediaWiki etc.)
+/*/
+# Whitelist of directories in the document root
+!/rdoc/
+!/images/
